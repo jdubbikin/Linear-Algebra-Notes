@@ -1,0 +1,643 @@
+
+
+# Lecture Notes
+
+## Neads a title
+
+Consider $$ L:V-V $$ , the dimension $$(v) = n$$ The matrix representation depends on an ordered Basis.
+
+####Ex) 
+>   $$ L:\mathbb{R}^2 \rightarrow \mathbb{R}^2  $$ 	Were  $$  L(x) = (x-x_1, 3x_2)^T L(e_1) = \left(\begin{array}{ccc} 1 \\ 0 \end{array} \right) $$ ,  $$ L(e_2) = \left[\begin{array}{ccc}-1\\3\end{array}\right] $$
+
+
+>   The matrix representation with respect to $${\{e_1, e_2\}}$$ is $${\left[\begin{array}{ccc}1 & -1\\0&3\end{array}\right]}$$ 
+
+>   Suppose we choose $$u_1 = \left(\begin{array}{ccc}1\\-1\end{array}\right), u_2 = \left(\begin{array}{ccc}-1\\2\end{array}\right)$$, $$  L(u_ 1) = Au_1 = \left(\begin{array}{ccc} 2 \\ -3 \end{array}\right), L(u_2) = Au_2 = \left(\begin{array}{ccc}-1\\6\end{array}\right)$$
+
+>   We need $$L(u_1) = au_1+cu_2, L(u_2)=bu_1+du_2\implies\left[\begin{array}{ccc}a & b\\c & d\end{array}\right]$$ the transform from $$(u_1, u_2)\left[\begin{array}{ccc}1&1\\-1&2\end{array}\right]$$ the transform from $$ (e_1, e_2)\rightarrow[u_1, u_2]$$  is $$ U^{-1} = \left(\begin{array}{ccc}\frac{2}{3} & \frac{-1}{3}\\ \\\frac{1}{3} & \frac{1}{3}\end{array}\right)$$
+
+>   $$  $$
+
+>   $$ U^{-1} L(u_1) = U^{-1}+Au_1=\left(\begin{array}{ccc}\frac{7}{3}\\ \frac{-1}{3}\end{array}\right)$$ , $$ U^{-1} L(u_2) = U^{-1}+Au_2=\left(\begin{array}{ccc}\frac{8}{3}\\ \frac{5}{3} \end{array} \right)$$
+
+>   $$  $$
+
+>   $$L(u_1) = \frac{7}{3}v_1-\frac{1}{3}u_2$$ , $$L(u_2) = -\frac{8}{3}u_1 + \frac{5}{5}u_2$$
+
+>   $$  $$
+
+>   $$\Rrightarrow matrix \ B=\left(\begin{array}{ccc}\frac{7}{3}&\frac{8}{3}\\ \frac{1}{3}&\frac{5}{3}\end{array}\right)$$
+
+$$  $$
+
+The Columns of $$ B $$ are $$(U^{-1}Au_1,U^{-1}Au_2) = U^{-1}(Au_1,Au_2)$$ , $$ B = U^{-1}A U$$
+	
+###Definition:-
+  If $$A$$ and $$B$$ are $$n\times n$$ matrices, and $$S$$ is not singular such that $$B = S^{-1}AS$$, then $$B$$ is similar to $$A$$
+	
+Since $$B = S^{-1}AS$$
+$$SBS^{-1} = SS^{-1} A SS^{-1}\implies A = SBS^{-1} \Rightarrow A$$ is similar to $$B$$ 
+
+So, if $$ B $$ is Similar to $$ A $$, $$ A $$ is Similar to $$ B $$
+
+<!--BREAK-->
+
+####Ex)  
+>   Let $$D$$ be the differential operation on $$P_3$$ Find $$B$$ representing  $$D$$ W.R.T $$[1, x, x^2]$$ and $$A$$ representing $$D$$ W.R.T. $$[3, 4x, 2x^2+x]$$
+
+>   Since
+
+>	$$D(1) = 0 = 0 \cdot 1 + 0 \cdot x+ 0 \cdot x^2$$
+
+>	$$D(x) = 1 = 1 \cdot 1+0 \cdot x + 0 \cdot x^2$$
+
+>	$$D(x^2) = 2x = 0 \cdot 1+2 \cdot x + 0 \cdot x^2$$
+
+>  $$B = \left(\begin{array}{ccc}0&1&0\\0&0&2\\0&0&0\end{array}\right)$$
+
+>  $$  $$
+
+>  Transition from $$[3, 4x, 2x^2=X]$$ to $$[1, x, x^2]$$ is, 
+	
+>   $$D(3)   = 0 =  0 \cdot 3 + 0 \cdot 4x + 0 \cdot (2x^2+x)$$
+
+>   $$D(4x) = 4 = \frac{4}{3} \cdot 3 + 0 \cdot 4x + 0 \cdot (2x^2+x)$$
+
+>   $$D(3)   = 4x+1 = \frac{1}{3} \cdot 3 + 0 \cdot 4x + 0 \cdot (2x^2+x)$$
+	
+>   $$ A = \left(\begin{array}{ccc} 0 & \frac{4}{3} & \frac{1}{3} \\ 0 & 0 & 1 \\ 0 & 0 & 0\end{array}\right)$$
+	
+>   $$  $$
+
+	
+>   To go from $$[3, 4x, 2x^2+x]$$ to $$[1, x, x^2]$$ , 
+$$ S = \left(\begin{array}{ccc} 3 & 0 & 0 \\ 0 & 4 & 1 \\ 0 & 0 & 2 \end{array}\right)$$ ,  $$ S^{-1} = \left(\begin{array}{ccc} \frac{1}{3} & 0 & 0 \\ 0 & \frac{1}{4} & -\frac{1}{8} \\  0 & 0 & \frac{1}{2} \end{array}\right)$$ and $$S^{-1}BS=A$$
+
+>   $$  $$
+
+>   $$ A $$ is  a matrix representation W.R.T.  $$[1, x, x^2]$$
+
+>   $$ B $$ is a matrix representation W.R.T. $$[3, 4x, 2x^2+x]$$
+	
+>   $$ S $$ is a transitional matrix from $$[3, 4x, 2x^2+x]$$ to $$[1, x, x^2]$$.
+
+<!--BREAK-->
+
+## Orthogonality in $$\mathbb{R}^2$$ and $$\mathbb{R}^n$$
+
+2 vectors are orthogonal vectors at right angles ($$\mathbb{R}^2$$ and $$\mathbb{R}^3$$)
+
+Suppose 
+$$X = (x_1, x_2, \dots ,x_n)^T $$ , $$Y = (y_1, y_2, \dots , y_n)^T$$
+
+From 1.5 the inner product $$X^TY$$ is 
+
+$$X^TY = x_1y_1+x_2y_2+ \dots + x_n y_n = \sum\limits^{n}_{i=1}x_i y_i$$
+
+in $$\mathbb{R}^2$$ and $$\mathbb{R}^3$$. We call this the Dot Product.
+	
+Eg)
+	
+>   $$X = \left(\begin{array}( 1 \\ 2 \\ 3 \end{array}\right)$$ ,  $$Y = \left(\begin{array}( 3 \\ 1 \\ -4 \end{array}\right)$$
+
+>   $$  $$
+
+>   $$X^TY = 1 \cdot 3 + (-2) \cdot 1 + 1 \cdot (-4) = -3$$
+	
+>   and
+	
+>   $$X = \left(\begin{array}( 1 \\ 2 \\ 3 \\ 4 \end{array}\right), Y=\left(\begin{array}( 4 \\ -1 \\ 1 \\ 2 \end{array}\right) \ X^TY = 1 \cdot 4 + 2 \cdot (-1) + 3 \cdot 1+ 4 \cdot 2 = 13$$
+
+
+$$  $$
+
+
+##Scalar Dot Product in $$\mathbb{R}^2$$ and $$\mathbb{R}^3$$
+	
+Since 
+
+$$X^TX = (x_1, x_2)\left(\begin{array} {ccc}x_1\\x_2\end{array}\right) = x^2_1+x_2^2$$
+
+$$  $$
+	
+$$||x||=\sqrt{X^TX}$$ in $$\mathbb{R}^3, ||X||=\sqrt{x_1^2+x_2^2+x_3^2}$$
+
+
+For $$X,Y$$in $$\mathbb{R}^2$$ or $$\mathbb{R}^3$$ where $$\theta$$ is an angle between $$Z$$ and $$Y$$
+
+$$  $$
+
+$$  $$
+
+<!--BREAK-->
+	
+##Law of Cosines $$X^T Y=||X|| ||Y||cos\left( \theta \right)$$
+	
+$$||X-Y||^2=||X||^2+||Y||^2-2||X|| ||Y||cos(\theta)$$
+
+$$\implies ||X|| ||Y||cos(\theta)=\frac{1}{2}[||X||^2+||Y||^2-||X-Y||^2]$$
+
+$$||X||||Y||cos(\theta) = \frac{1}{2}(X^TX+Y^TY-(X-Y)^T(X-Y))=\frac{1}{2}(X^TX+Y^TY-X^TX-Y^TY+X^TY+Y^TX)$$
+
+$$=\frac{1}{2}(X^TY+Y^TX)$$
+
+Since $$X^TY=Y^TX$$
+$$=\frac{1}{2}(X^TY+X^TY)=\frac{1}{2}(2X^TY)=X^TY$$
+	
+A Unit vector in the $$X$$ direction $$U=\frac{X}{||X||}$$
+
+$$||U|| = \left|\left|\frac{X}{||X||}\right|\right| = \frac{||X||}{||X||}=1$$
+
+and
+
+$$cos(\theta)=\frac{X}{||X||} = \frac{||X||}{||X||}=1$$
+
+$$u=\frac{X}{||X||}, v=\frac{Y}{||Y||}, cos(\theta)=\frac{X^TY}{||X||||Y||}=\left(\frac{X}{||X||}\right)^T\left(\frac{Y}{||Y||}\right)^T=U^TV$$
+
+$$  $$
+
+$$  $$
+
+## Cauchy - Schwartz Inequality
+	
+If X and Y are in $$\mathbb{R}^2$$ or $$\mathbb{R}^3$$ then 
+
+$$|X^TY| \le\|X\| \|Y\|$$ 
+
+with equality IFF $$x=0$$ or $$ y=0$$ or $$y=\alpha x$$
+ 
+$$theta = \frac{\pi}{2}\Rrightarrow cos(\theta ) = \theta$$
+	
+2 vectors $$ X $$ and $$Y$$ $$\theta $$ $$\mathbb{R}^2$$ or $$\mathbb{R}^3$$ are called Orthogonal IFF $$X^TY = 0$$
+
+EX)
+
+>   $$\left(\begin{array}{ccc} 1 \\ 1 \end{array}\right) \ \left(\begin{array}{ccc} 1\\-1\end{array}\right) \implies (1, 1)^T \left(\begin{array}{ccc}1\\-1\end{array}\right)=1-1=0$$
+
+## Scalar and vector projections let X and Y be in $$\mathbb{R}^2$$ and $$\mathbb{R}^3$$
+
+$$\alpha = \|X\|cos(\theta) = \frac{X^TY}{\|Y\|} $$
+	
+is called Scalar Projection. 
+
+### Projection vector 
+
+$$P=\alpha\frac{Y}{\|Y\|} = \left(\frac{X^TY}{Y^TY}\right)y $$
+
+
+$$  $$
+
+$$  $$
+
+## Orthoganalaty in $$\mathbb{R}^n$$
+
+Let $$X $$ in $$\mathbb{R}^n$$ define Euclidian norm ( length ).
+ 
+$$ \|X\|_2 = \sqrt{X^TX} = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2}$$
+	
+We define the angle between 2 vectors $$X$$ and $$Y$$
+
+$$cos(\theta) = \frac{X^TY}{\|X\|\|Y\|}$$ 
+
+$$0\leq \theta \leq \pi$$
+	
+Define: 2 Vectors $$X $$ ,  $$Y $$ in $$ \mathbb{R}^n$$ are called orthogonal if $$X^TY = 0$$,
+ 
+	
+Notation is $$X \ \dot \ Y $$
+
+####EX)
+
+>   Find the point on $$Y = 3X$$, closest to the point $$(2, 1)$$
+
+>   $$ V = \left(\begin{array}{ccc}2\\1\end{array}\right), \ \  W = \left(\begin{array}{ccc}1\\3\end{array}\right)$$
+
+>   ( When $$ x $$ is 1 $$ y $$ is 3 )
+
+>   $$Q = \left(\frac{Y^T W}{W^T W}\right) w = \frac{5}{10}\left(\begin{array}{ccc} 1 \\ 3 \end{array}\right)  = \left( \begin{array}{ccc}\frac{1}{2} \\ \frac{3}{2}\end{array}\right)$$
+
+
+$$  $$
+	
+Ex) 
+>   $$  $$Find the equation of a plane containing point $$(4, 1, -3)$$, perpendicular to the normal $$N=(1, 2, 4)  P_0 = (4, 1, 3),  P = (x, y, z)$$
+
+>   $$\vec{P_0P}  = (x-4, y-1, 2-(-3))^T =(x-4, y-1, 2+3)$$
+
+>   p in the plain 
+
+>   $$\implies\vec{P_0P^T} N =0 \implies (x-4, y-1, 2+3)\left(\begin{array}{ccc}1\\2\\4\end{array}\right)=0\implies (x-4)+2(y-1)+4(2+3) = 0$$
+
+$$  $$
+
+In general a plain contains the point $$(x_0, y_0, z_0)$$ normal to $$N = (a, b, c)$$ is given by:
+
+$$a(x-x_0)+b(y-t_0)+c(z-z_0) = 0$$
+	
+<!--BREAK-->
+	
+EX)
+>    $$X=\left(\begin{array}{c} 1 \\ 2 \\ 1\\ -2 \end{array}\right), Y = \left(\begin{array}{c} 2 \\ 1 \\ 2\\ 1 \end{array}\right)$$
+
+>    $$  $$
+
+>    $$cos(\theta)=\frac{X^TY}{\|X\|\|Y\|} = \frac{2+2+2-2}{\sqrt{10} \sqrt{10}} = \frac{4}{10}=\frac{2}{3}$$
+
+>    $$cos(\theta) = \frac{2}{3} \ \ \theta = acos\left(\frac{2}{3}\right)$$
+
+Were $$0\le \theta \le \pi$$
+	
+$$  $$
+
+$$  $$
+
+<!--BREAK-->
+
+#Lecture notes 2014/01/29
+
+##Similar Matries
+
+Consider $$L:V-v$$   $$ d $$ in $$ (v)=n $$
+
+Matrix representation depends on an ordered basis
+
+Ex)
+>   $$  L: \mathbb{R}^2 \implies \mathbb{R}^2$$ were $$ L(x)=(x-x_1, 3x_2)^T $$
+
+>   $$ L(e_1) = \left(\begin{array}{c} 1 \\ 1 \end{array}\right)$$ , $$ L(e_2)=\left(\begin{array}{c} -1 \\ 3 \end{array}\right) $$
+
+>   The matrix representation with respect to $$ \{e_1, e_2\} $$ is $$ \left(\begin{array}{c}\ 1 & -1 \\ 0 & 3 \end{array}\right) $$
+
+>   Suppose we choose $$ u_1 = \left(\begin{array}{c}1 \\ 0 \end{array}\right) $$ $$ u_2 = \left(\begin{array}{c}1 \\ 2 \end{array}\right) $$ 
+
+>   $$ L(u_1) = Au_1 = \left(\begin{array}{c} 2 \\ -3 \end{array}\right) $$ , $$ L(u_1) = Au_1 = \left(\begin{array}{c} -1 \\ 6 \end{array}\right) $$ 
+
+>   We need $$ L(u_1) = au_1 + cu_2 $$, $$ L(u_2) = bu_1 + du_2 \implies \left(\begin{array}{c} a & b \\ c & d \end{array}\right) $$ the transistion form
+$$ [u_1, u_2] = [e_1, e_2] $$ if $$ (v_1  v_2) = \left( \begin{array}{c} 1 & 1 \\ -1 & 2 \end{array}\right)$$ the transform form $$ [e_1, e_2] \rightarrow [u_1, u_2] $$ is 
+$$ U^{-1} = \left(\begin{array}{c} \frac{2}{3} & \frac{-1}{3} \\ \frac{1}{3} & \frac{1}{3}\end{array}\right) $$
+
+>   $$  $$
+
+>   $$ U_1^{-1}L(u_1) = U^{-1}Au_1 =  \left(\begin{array}{c} \frac{7}{3} \\ \frac{-1}{3}\end{array}\right) $$ , $$ U^{-1}L(u_2) = U^{-1}Au_2 = \left(\begin{array}{c} \frac{-8}{3} \\ \frac{5}{3}\end{array}\right) $$
+
+>   $$  $$
+
+>   $$ L(u_1) = \frac{7}{3}v_1 - \frac{1}{3}v_2 $$ , $$ L(u_2) = \frac{-8}{3}u_1 + \frac{5}{3}u_2$$
+
+>   Matrix 
+
+>   $$ B = \left(\begin{array}{c} \frac{7}{3} & \frac{-8}{3} \\ \frac{-1}{3} & \frac{5}{3}\end{array}\right) $$
+
+>   $$  $$
+
+The columns of B are $$ (U^{-1}Av_1 , \ U^{-1}Au_2) = U^{-1}(Au_1, \ Au_2) \ \therefore $$ 
+
+$$B = U^{-1}AU$$
+
+### Definition :-
+
+*If $$ A $$ and $$ B $$ are two $$ n\times n $$, and $$ S $$ is  singular such that $$ B = SBS^{-1} $$ then $$ B $$ is similar to A Since $$ B = S^{-1}AS SBS^{-1} = SS^{-1}ASS^{-1} \Rightarrow A = SBS^{-1} \implies A$$ is similar to $$ B $$ So if $$ B $$ is similar to $$ A $$ and $$ A $$ is similar $$ B $$* 
+ 
+
+EX) 
+>   Let $$ D $$ be the differentiation  operation on $$ P_3 $$ find $$ B $$ representing $$ D $$ W.R.T. $$ [ \ 1, \ x, \ x^2 \ ] $$ and $$ A $$ represtnting $$ D $$ W.R.T. $$ [ \ 3, \ 4x, \ 2x^2 + x \ ] $$ Since 
+
+>>   $$ D(1) = 0 = 0 * 1 + 0 * x + 0*x^2  $$
+
+>>   $$ D(2) = 1 = 1*1 + 0 * x + 0 * x^2  $$
+
+>>   $$ D(3) = 2x = 0*1 + 2 * x + 0 * x^2 $$
+
+>   $$ B =  \left(\begin{array}{c} 0 & 1 & 0 \\ 0 & 0 & 2 \\ 0 & 0 & 0 \end{array}\right) $$
+
+>   The transition from $$ [ \ 3, \ 4x, \ 2x^2 + x \ ] $$ to $$ [ \ 1, \ x, \ x^2 \ ] $$ is.
+
+>>   $$ D(3) = 0 = 0*3 + 0*4 + 0*(2x^2 + x) $$
+
+>>   $$ D(4x) = 4 = \frac{4}{3} + 0*4x + 0*(2x^2 + x) $$
+
+>>   $$ D(2x^2 + x) = 4x + 1 = \frac{1}{3}*3 + 1*4x + 0(2x^2 +x) $$
+
+>   $$ A = \left(\begin{array}{c} 0 & 0 & 0 \\ 0 & 4 & 1 \\ 0 & 0 & 2 \end{array}\right) $$ 
+
+>   $$  $$
+
+>   $$ B $$ is the matrix representation W.R.T. $$ [ \ 1, \ x \ x^2] $$ A is the matrix representation W.R.T. $$ [ \ 3, \ 4x, \ 2x^2 + x \ ] $$ $$ S $$ is the transition matrix from $$ [ \ 3,  \ 4x, \ 2x^2 + x \ ] $$ to $$ [ \ 1,  \ x, \ x^2 \ ] $$
+
+$$  $$
+
+$$  $$
+
+<!--BREAK-->
+
+#Class Notes 20140212
+
+##Orthogonal Subspaces
+
+Suppose $$ A $$ is $$ m \times n $$ and $$ x \ \epsilon  \ N(A) \implies Ax = 0$$ the $$ a_{i1}x_1 + 2_{i2}x_2 + \dots + a_{in}x_n = 0 \implies x $$ is orthogonal to the $$ i^{th} $$ of $$ A^T $$, so if $$ x $$ is orthogonal to the $$ i^{th} $$ columns of linear combinations of the columns of $$ A $$ we say $$ R(A^T) $$ and $$ N(A) $$ are orthogonal. 
+
+###Definition :-
+
+ *If $$ X $$ and $$ Y $$ are two subspaces of $$  \ \mathbb{R}^n $$ we say $$ X $$ is orthogonal to $$ Y $$ if and only if $$ \ X^TY= 0 \ \ \forall \ x \ \in \ X  $$ and $$ y \ \in \ Y $$*
+
+$$  $$
+
+
+####EX) 
+>  Suppose $$ X $$ is spanned by $$ e_1 $$ and $$ Y $$ is spanned by $$ e_3 $$
+
+>  $$ \implies \ x \ \in \ X $$  if and only if $$ x = \alpha \ \left(\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right) $$,
+ $$  \ y \ \in \ Y  $$ if and only if $$ Y = \beta \ \left(\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right) $$,
+ $$ X^TY = \alpha \ \left(\begin{array}\ 1 \ &  0 \ & 0\end{array}\right) \cdotp \ \beta \ $$ $$\left(\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right)  = \alpha \ \beta \ \left[\left(\begin{array}{c} \ 1 \ 0 \ 0 \end{array}\right) \left(\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right) \right]= 0$$
+
+###Definition :-
+ *Let $$ Y $$ be a subspace of $$ \mathbb{R}^n $$. The set of vectors in $$ \mathbb{R}^n $$ orthogonal  to $$ Y $$ are called the "Orthogonal" and "Compliment" of $$ Y $$, denoted $$ Y^{\perp} $$*
+
+
+####EX)
+
+>   Concider $$ \mathbb{R}^5 $$ were $$ X= span(e_1, e_2)) $$, $$ Y = span(e_3, e_4) $$ if $$ X \ \epsilon Y \ \implies\left(\alpha, \beta, 0, 0, 0 \right) $$ and $$ Y \ \epsilon Y \ \implies \left( 0, 0, \delta, \ \gamma, 0 \right) $$ $$ X^TY = 0 \implies X $$ and $$ Y $$ are orthogonal, but they are not Orthogonal Compiment                                                                                                                                                                                                     
+  
+>   $$ X^\perp = span(e_1, e_4, e_5) $$, $$ \frac{1}{Y} = span(e_1, e_2, e_5) $$
+$$ \ne Y \ \ne X$$
+
+$$  $$
+
+
+## A Big Deal *Fundamental Subspaces*: 
+Let $$ A $$ be an $$ m\times n $$ matrix range $$ R(A) = \{ b \in \mathbb{R}^n \ | \ b = Ax $$ for some $$ X \in \mathbb{R}^n \} = $$ Column space of $$ A \ (S \ \cdotp S \ \cdotp\mathbb{R}^m) $$
+
+$$ R(A) = \{ y \in \mathbb{R}^n \ | \ Y=A^T $$ for some $$ X=\mathbb{R}^n \}$$
+
+$$ S \ \cdotp S$$ of $$ \ \mathbb{R}^n $$
+
+$$ N(A)=\{X\in \mathbb{R}^n \ | \ Ax = 0\} $$
+
+$$ N(A^T)= \{Y \in \mathbb{R}^m \ | \ A^TY = 0\} $$
+
+<!--BREAK-->
+
+###Therom 5.2.1
+Find the subspace theorem:- _If $$ A $$ is any $$ m\times n $$ Matrix_ 
+
+$$ N(A)=(R(A^T))^\perp $$
+
+$$ N(A^T) = (R(A))^\perp $$
+
+Ex)
+>   Let $$ A = \left(\begin{array}{c} 4 & 0 \\ 1 & 0 \end{array}\right) $$ and the Column space $$ \alpha \left(\begin{array}{c} 4 \\ 1\end{array}\right) + \beta\left(\begin{array}{c} 0 \\ 0 \end{array}\right) = \alpha \left(\begin{array}{c}4 \\1\end{array}\right)$$
+
+>   $$ R(A)= \left\{ b \ | \ b = x_1 \left(\begin{array}{c}4 \\1\end{array}\right) \right\} $$ , 
+>   $$ N(A^T)=\left\{ Y \ | \ A^TY = 0\right\} $$
+
+>   $$ \left(\begin{array}{c} 4 & 1 \\ 0 & 0 \end{array}\right)\left(\begin{array}{c}Y_1 \\ y_2 \end{array}\right)= \left(\begin{array}{c}0 \\ 0 \end{array}\right)\Rightarrow Y = \beta \left(\begin{array}{c} 1 \\ 4 \end{array}\right)$$
+
+>   $$ X^TY = \alpha \left(\begin{array}{c} 4 & 1 \end{array}\right) \cdotp \beta \left( \begin{array}{c} 1 \\ -4 \end{array} \right) = \alpha \ \beta \cdotp 0 = 0 $$
+>   $$ \Rightarrow N(A^T)= \left[R(A)\right]^\perp $$ show true for $$ N(A) = \left[ R(A^T) \right]^ \perp $$
+
+###Theorem 5.2.2
+If $$ S $$ is a subspace of $$ \mathbb{R}^n $$ then $$ Dim(S) + Dim(S^\perp) = n $$. Also if $$ \{x_1, x_2, \dotsc,x_n\} $$ is a basis of $$ S $$ then $$ \{x_{n+1}, x_{n+2}, \dotsc , x_n \}  $$ is a basis for $$ S $$ then $$ \{x_1, x_2, \dotsc, x_n\} $$ is a basis for $$ \mathbb{R}^n $$
+
+###Definition:-
+The direct sum $$ W = U \oplus V: $$ given 2 subspaces $$ U $$ and $$ V $$ of $$ W $$ such that $$ W=U+V $$ for any $$ u=U $$ and $$ v=V $$
+
+Ex)
+>   Let $$ W=\mathbb{R}^3, u=span(e_1), v=span(e^2) $$ then $$ w \in W \iff W = u\oplus v $$
+
+###Theorem 5.2.3
+   $$ w=\alpha \ e_1 \ + \ \beta \ e_2 = span(e_2, \ e_2) $$ then $$ S $$ in a subspace of $$ \mathbb{R}^n $$ then $$ \mathbb{R}^n = S\oplus S^\perp $$
+
+####ex)
+
+>   $$ S = span (e_1), S^\perp = span(e_2, e_3) $$ then $$ S \oplus S^\perp = span(e_1, e_2, e_3) = \mathbb{R}^3 $$
+
+###Theorem 5.2.4
+If $$ S $$ is  subspace of $$ \mathbb{R}^n $$ then $$ (S^\perp) = S $$
+
+<!--BREAK-->
+
+#### Ex)
+>   Let $$ A = \left(\begin{array}{c} 1 & 2 & 1 \\ 0 & 1 & 2 \\ 1 & 1 & -1 \end{array}\right) $$ find a basis for $$ N(A), R(A^T), N(A^T), R(A) $$. To find $$ N(A) $$ and $$ R(A^T) $$ we have to row reduce $$ A $$
+
+>   $$  $$
+
+>   $$ \implies  \left(\begin{array}{c} 1 & 0 & -3 \\ 0 & 1 & 2 \\ 0 & 0 & 0 \end{array}\right) $$ 
+
+>   $$  $$
+   
+>   $$N(A)\implies x_1 = 3x_3, \ x_2 = -2x_3 $$
+
+>   $$ x \in N(A) \iff X = \alpha \left(\begin{array}{c} 3 \\ -2 \\ 1 \end{array}\right) , \ R(A^T)$$ is spaned by $$ \left(\begin{array}{c}1 \\ 0 \\ -3\end{array}\right)\cdotp\left(\begin{array}{c} 0 \\ 1 \\ 2 \end{array}\right) $$
+
+>   $$  $$
+
+>   $$Y\in R(A^T)Y = \beta \ \left(\begin{array}{c} 1 \\ 0 \\ -3 \end{array}\right) + \delta \ \left(\begin{array}{c} 0 \\ 1 \\ 2 \end{array}\right)  $$
+
+>   $$ X^TY = 0 $$ 
+>>   $$ Dim(N(A)) = 1 $$
+
+>>   $$ Dim(R(A^T)) = 2 $$
+
+>>   $$ Dim(N(A)) + Dim(R(A^T)) = 3 $$ 
+
+>   $$ A^T = \left(\begin{array}{c} 1 & 0 & 1 \\ 2 & 1 & 1 \\ 1 & 2 & -1 \end{array}\right) \rightarrow \left(\begin{array}{c} 1 & 0 & 1 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{array}\right) $$ 
+
+>   $$  $$
+
+>>   So 
+   
+>   $$ X \in R(A) = \alpha \left(\begin{array}{c}1 \\ 0 \\ 1 \end{array}\right) + \beta \ \left(\begin{array}{c} 0 \\ 1 \\ -1 \end{array} \right) $$
+
+>   $$   $$
+
+>   $$ Y \in N(A^T) = \delta \ \left(\begin{array}{c} -1 \\ 1 \\ 1 \end{array}\right) $$
+
+>   $$  $$
+
+>   $$ X^TY =0 \implies N\left(A^T\right) = \left[R(A)\right]^\perp$$
+
+
+<!--BREAK-->
+
+# Class notes 20140226
+## Orthoganal Projectoions
+
+Let $$ W $$ be a subspace of $$ \mathbb{R}^n $$ and $$ dim W = k, $$ $$ W = span\{x_1, x_2, \dots,x_k\} $$
+ $$  $$  $$ \hat{v} \in W $$closest to $$ v $$
+
+![Orthogonal Projection](file:///Users/JimW/Desktop/OrthProject.tif)
+
+Answer: Want $$ \hat{v} \in W $$ so that $$ v-\hat{v} \in W^\perp $$ 
+
+$$ \hat{v}=  $$ is the Orthoganal projection of $$ V $$ into $$ W $$ We need $$ \hat{v} $$ so that 
+
+$$ V-\hat{v} \perp x_1 \implies (V-\hat{v}) \cdot x_1 = 0 \\ V-\hat{v} \perp x_2 \implies (V-\hat{v}) \cdot x_2 = 0 $$ 
+
+$$   \vdots  $$ 
+
+$$ V-\hat{v} \perp x_n \implies (V-\hat{v}) \cdot X_n = 0$$
+
+$$ X = \pmatrix{ x_1  \cr x_2 \cr \vdots \cr x_n} Y =  \pmatrix{ y_1  \cr y_2 \cr \vdots \cr y_n}  \ \ \ \ X \cdot Y = X^T Y \ \ \ = \pmatrix{ x_1  \ x_2  \cdots  x_n} \pmatrix{ y_1  \cr y_2 \cr \vdots \cr y_n} = \sum_{i=1}^{n} X_n\cdot Y_n$$
+
+$$ X_1^T(V-v^n)=0 \implies x_1^TV-X_1^T\hat{v}=0\implies X_1^TV=X_1^\hat{v}$$ 
+
+$$ \vdots $$
+
+$$ X_k^T(V-v^n)=0 \implies x_k^TV-X_k^T\hat{v}=0\implies X_k^TV=X_k^\hat{v} $$
+
+$$ \pmatrix{ x_1^T  \cr x_2^T \cr \vdots \cr x_k^T } \pmatrix{ \cr \cr V \cr \cr }=\pmatrix{ x_1^T  \cr x_2^T \cr \vdots \cr x_k^T } \pmatrix{ \cr \cr \hat{v} \cr \cr }$$
+
+Let $$ A=\pmatrix{ X_1 & | &  X_2 & | & \cdots & | & X_k } $$ $$  $$ $$ A^TV=A^T\hat{v} $$
+
+col Space $$ (A)=W $$ $$ A^T $$ is $$ n \times k $$ and now invertable $$ A $$ is a $$ n\times k $$ Matrix $$ \hat{v} \in W $$ So $$ \hat{v}=c_1x_1+c_2x_2+\cdots c_k x_k $$
+
+$$ c_1, c_2, \cdots , c_k \in \mathbb{R} $$
+
+$$ \hat{v}= \pmatrix{ X_1 & | &  X_2 & | & \cdots & | & X_k } \pmatrix{ c_1 \cr c_2 \cr \vdots \cr c_k }= AC \therefore A^T = A^T\hat{v}=A^TAC $$
+
+$$ A^TA $$ is $$ n\times k $$ and $$ k \times n \implies A^TA\rightarrow k \times k $$ and square, so invertible.
+
+###Prop
+Since $$ x_1, \cdots , x_k $$ are independent, $$ A^TA $$ has an inversion.  
+
+$$ A^TV=A^TAC \implies (A^TA)^{-1}A^TV=C$$
+
+###Formula For Projection
+
+$$ W=span\{x_1,\cdots , x_k\} $$ $$ X_1, \cdots x_k $$ are independent. $$ V\in \mathbb{R} $$ the projection of $$ v $$ onto $$ W=\hat{V}=A(A^TA)^{-1}A^TV $$
+
+$$ Q_w = $$ Projectio matrix onto $$ W $$
+
+[URL for Lectures](faculty.uml.edu/dklain/projections.pdf)
+
+If $$ \pmatrix{ A \cr \vdots \cr A^n  }\pmatrix{ x \cr y } = (?) $$ an over determined system
+
+If $$ Ax=d $$ has no solutions, what's the best approximation for a solution? If $$ x_1A_1+\cdots x_nA_n $$ can't solve $$ Ax=b $$, try $$ A^TAv=A^Tb $$
+
+set $$ x=(A^TA)^{-1}A^Tb $$ The least squares approximation 
+
+>####e.g.
+Compute the projection matrix $$ Q $$ for the 2D subspace $$ W $$ of $$ \mathbb{R}^4 $$ spanned by $$ (1, 1, 0, 2) $$ and $$ (-1, 0, 0, 1) $$
+What id the orthogonal projection of $$ (0, 2, 5, -1) $$ onto $$ W $$
+
+>> $$  $$$$ A = \pmatrix{ 1 & -1 \cr 1 & 0 \cr 0 & 0 \cr 2 &1 }$$
+
+>> $$  $$$$ A^TA = \pmatrix{ 1 & 1 & 0 & 2 \cr -1 & 0 & 0 & 1 }\pmatrix{1 & -1 \cr 1 & 0 \cr 0 & 0 \cr 2 &1 } = \pmatrix{ 6 & 1 \cr 1 & 2 } $$
+
+>> $$  $$$$ (A^TA)^{-1} = \frac{1}{det(A)} = \frac{1}{12-1}\pmatrix{2 & -1 \cr -1 & 6} = \pmatrix{ \frac{2}{11} & \frac{-1}{11} \cr \frac{-1}{11} & \frac{6}{11} }  = \frac{1}{11}\pmatrix{ 2 & -1 \cr 1 & 6 }$$
+
+>> $$ Q = \frac{1}{11}\pmatrix{ 1 & -1 \cr 1 & 0 \cr 0 & 0 \cr 2 & 1}\pmatrix{ 2 & -1 \cr -1 & 6 }\pmatrix{ 1 & 1 &0 & 2 \cr -1 & 0 & 0 & 1 } $$ 
+>> $$ =\frac{1}{11}\pmatrix{ 1 & -1 \cr 1 & 0 \cr 0 & 0 \cr 2 & 1 } \pmatrix{ 3 & 2 & 0 & 3 \cr -7 & 1 & 0 & 4 } = \frac{1}{11}\pmatrix{ 10 & 3 & 0 & -1 \cr 3 & 2 & 0 & 3 \cr 0 & 0 & 0 &0 \cr -1 & 3 & 0 & 10 }$$ 
+
+> $$  $$
+
+>> b) $$ Q\pmatrix{ 0  \cr 2 \cr 5 \cr -1 } = \frac{1}{11}\pmatrix{ 7 \cr 1 \cr 0 \cr -4 } $$
+
+$$ Q_wQ_w = A\overbrace{(A^TA)^{-1}A^TA}^{I}(A^TA)^{-1}A^T \implies Q_w^2A(A^TA)^{-1}A^T = Q_w$$
+
+It is Indempotant. 
+
+###Line fit with least squares 
+
+Fitting a line to data as the best fit we can. 
+
+![Scatter Plot](file:///Users/JimW/Documents/UMassLowell/classes/LinearAlgebra/scaterplot.tiff) Wishful thinking, we need $$ y = ax+b $$ as a best fit
+
+$$ \matrix{ y_1 = mx_1 + b  \\ y_2 = mx_2 + b \\ \vdots \\ y_n= mx_n + b } \implies \pmatrix{ y_1 \\ y_2 \\ \vdots \\ y_3} = \pmatrix{ x_1 & 1 \cr x_2 & 1 \cr \vdots & \vdots \\ x_n & 1 }\pmatrix{ m \\ b } $$
+
+$$ Y=AC $$ Has no solution so multiply both sides by $$ A^T $$ giving $$ A^TY = A^TAC \implies (A^TA)^{-1}A^TY = C = \pmatrix{ m \\ b } $$ we have
+
+$$ A^TA = \pmatrix{ x_1 & \cdots & x_n \cr 1 & \cdots & 1 }\pmatrix{ x_1 & 1 \cr \vdots & \vdots \cr x_n & 1 }=\pmatrix{ \sum x_i^2 & \sum x_i \cr \sum x_i & n } $$
+
+####E.X.
+
+> We have a data set $$ (1,3),(2,2),(3,0),(4,-1),(5,-3) $$ find the Best fit line. 
+
+>![Least Squares fit](file:///Users/JimW/Documents/UMassLowell/classes/LinearAlgebra/leastSqEg.tiff)
+>$$ \pmatrix{ 3 \\ 2 \\ 0 \\ -1 \\ -3 } \matrix{ ? \\ = \\ No!}\pmatrix{ 1 & 2 \cr 2 & 1 \\ 3 & 1 \\ 4 & 1 \\ 5 & 1 }\pmatrix{ w \\ b }\longrightarrow $$ Least Squares. 
+
+> $$ \pmatrix{ m \\ b } \approx (A^TA)^{-1}A^TY$$
+
+> $$ A^TA = \pmatrix{5^2+4^2+3^2+2^2+1^2 & 5+4+3+2+1 \\ 5+4+3+2+1 & 5} = \pmatrix{55 & 15 \\ 15 & 5} $$
+
+> $$ (A^TA)^{-1} = \frac{1}{ 5(55)-15^2 } \pmatrix{ 5 & -15 \\ -15 & 55 }  = \frac{1}{50} \pmatrix{5 & -15 \\ -15 & 55} = \pmatrix{ \frac{1}{10} & \frac{-3}{10} \\  \frac{-3}{10} & \frac{11}{10} } $$
+
+> $$ \pmatrix{ \frac{1}{10} & \frac{-3}{10} \cr \frac{-3}{10} & \frac{11}{10} }\pmatrix{ 1 & 2 &3 & 4 & 5\cr 1 & 1 & 1 & 1 & 1}\pmatrix{ 3 \\ 2 \\ 0 \\ -1 \\ -3 } = \pmatrix{ 0.1 & -0.3 \cr -0.3 & 1.1 } \pmatrix{ -12 \\ 1 } = \pmatrix{ -1.2 - 0.3 \cr 3.6 + 1.1 }  = \pmatrix{ -1.5 \\ 4.7 } $$
+
+> $$ \therefore \matrix{ m = -1.5 \\ b = 4.7 }  \implies y \approx -1.5x + 4.7 $$
+
+
+####In polynomial form. 
+$$ y=ax^2+bx+c $$ we need
+
+$$ \pmatrix{y_1 \\ y_2 \\ \vdots\\ y_n } = \pmatrix{ a_1x_1^2+b_1x_1+c  \cr a_2x_2^2+b_2x_2+c \cr \vdots \cr a_nx_n^2+b_nx_n+c } \implies \pmatrix{ y_1 \\ y_2 \\ \vdots\\ y_n } = \pmatrix{ x_1^2 & x_1 & 1 \\ x_2^2 & x_2 & 1 \\ \vdots & \vdots & \vdots \\ x_n^2 & x_n & 1} \pmatrix{ a \\ b \\ c }$$
+
+$$ Y = AC \implies A^TY=A^TAC \implies (A^TA)^{-1}A^TY = C $$
+
+e.x
+>  $$ x_1 + x_2 = 3, \ \ 2x_1 - 3x_2 = 1, \ \ 0x_1 + 0x_2 = 2 $$ 
+
+>  $$ \pmatrix{1 & 1 \\ 2 & -3 \\ 0 & 0} \pmatrix{ x_1 \\ x_2 } = \pmatrix{ 3 \\ 1 \\ 2 }, \ \ \ A = \pmatrix{ 1 & 1 \cr 2 & -3 \\ 0 & 0}$$ 
+
+>  $$ \pmatrix{ 1 & 2 & 0 \\ 1 & -3 & 0} \pmatrix{ 1 & 1 \cr 2 & -3 \\ 0 & 0 } \pmatrix{ x_1 \\ x_2 }  = \pmatrix{ 1 & 2 & 0 \\ 1 & -3 & 0} \pmatrix{ 3 \\ 1 \\ 2 }$$
+
+>  $$ \pmatrix{ 5 & -5 \cr -5 & 10 } \pmatrix{ x_1 \\ x_2 } = \pmatrix { 5 \\ 0 } \implies \pmatrix{ 1 & -1 \\ 1 & -2 } \pmatrix{ x_1 \\ x_2 } = \pmatrix{ 1 \\ 0 } $$
+
+>  $$ \pmatrix{ x_1 \\ x_2 } = \pmatrix{1 & 1 \\ -1 & -2} \pmatrix{ 1 \\ 0 }$$
+
+>  $$ \pmatrix{ -2 & 1 \\ -1 & 1 } \pmatrix{ 1 \\ 0 } = \pmatrix{ 2 \\ 1 } = \hat{X}$$
+
+e.x.
+
+>  $$ P = A \hat{X} = \pmatrix{ 1 & 1 \cr 2 & -3 \\ 0 & 0} \pmatrix{ 2 \\ 1 } = \pmatrix{3 \\ 1 \\ 0} $$
+
+>  $$ r(\hat{X}) = b - p  = \pmatrix{ 3 \\ 2 \\ 1 } - \pmatrix{ 3 \\ 1 \\ 0} = \pmatrix{ 0 \\ 0 \\ 2} $$
+
+>  $$ A^Tr = \pmatrix{ 1 & 1 & 0 \\ 1 & -3 & 0 \\ } \pmatrix{ 0 \\ 0 \\ 2 } = \pmatrix{ 0 \\ 0 }$$
+
+>  $$ \implies r \in N(A^T) $$
+
+
+
+e.x.
+
+>  $$ A = \pmatrix{ 1 & 2 \\ 2 & 4 \\ -1 & -2 }, \ \ \pmatrix{ 3 \\ 2 \\ 1 } $$ Solve $$ A^TA\hat{x} = A^Tb $$
+
+>  $$ \pmatrix{ 1 & 2 & -1 \\ 2 & 4 & -2 } \pmatrix{ 1 & 2 \\ 2 & 4 \\ -1 & -2 } \pmatrix{ x_1 \\ x_2 } = \pmatrix{ 1 & 2 & -1 \\ 2 & 4 & -2 } \pmatrix{ 3 \\ 2 \\ 1 } $$
+
+>  $$ \pmatrix{ 1 & 2 \\ 1 & 2 } \pmatrix{ x_1 \\ x_2 } = \pmatrix{ 1 \\ 1 } $$
+
+>  $$ x_2 = \alpha, x_1 = 1-2x_2 = 1-2\alpha $$
+
+>  $$ \hat{x} \pmatrix{ 1-2\alpha \\ \alpha } = \pmatrix{ 1 \\ 0 } + \alpha \pmatrix{ -2 \\ 1 }$$ has $$ \infty \ \# $$ of solutions
+
+e.x.
+
+>  $$ \pmatrix{2-2\alpha \\ 1- \alpha \\ \alpha } = \hat{x} $$ 
+
+
+
+> x  | -1| 0 | 1 | 2
+> ---|---|---|---|--
+> y  | 0 | 1 | 3 | 9 
+
+>  $$ \pmatrix{1 & x_1 \\ \vdots & \vdots \\ 1 & x_n } \pmatrix{c_0 \\ c_1 } = \pmatrix{ y_1 \\ \vdots \\ y_n }  \ \ \  y = C_0 + C_1 x$$
+
+>  $$ \pmatrix{ 1 & -1 \\ 1 & 0 \\ 1 & 1 \\ 1 & 2 } \pmatrix{ c_0 \\ c_1 } = \pmatrix{ 0 \\ 1 \\ 3 \\ 9 } $$
+
+>  $$ \pmatrix{ 1 & 1 & 1 & 1 \\ 1 & 0 & 1 & 2 } \pmatrix{ 1 & -1 \\ 1 & 0 \\ 1 & 1 \\ 1 & 2 } \pmatrix{ c_0 \\ c_1 } = \pmatrix{ 1 & 1 & 1 & 1 \\ -1 & 0 & 1 & 2}\pmatrix{ 0 \\ 1 \\ 3 \\ 9 } $$
+
+>  $$  \pmatrix{ 4 & 2 \\ 2 & 6 } \pmatrix{ c_0 \\ c_1 }= \pmatrix{ 13 \\ 21 } $$
+
+>  $$  \pmatrix{c_0 \\ c_1} = \pmatrix{ 4 & 2 \cr 2 & 6 }^{-1} \pmatrix{ 13 \\ 21 } $$
+
+>  $$ = \frac{1}{20}\pmatrix{ 6 & -2 \cr -2 & 4 }\pmatrix{ 13 \\ 21 } = ? = \pmatrix{ \frac{35}{20}  \\ \frac{38}{20} } $$
+
+>  $$ y = C_0 + C_1 x = \pmatrix{ \frac{9}{5} \\ \frac{29}{10} } $$
+
+>  $$ y = \frac{9}{5} + \frac{29}{10}x $$
+
+If $$ (x_1,y_1)\dots (x_n, y_n) $$ and $$ x=( \ x_1 \ \ x_2 \ \ \dots \ \ x_n \ ) $$ and $$ y = ( \ y_1 \ \ y_2 \ \ \dots \ \ y_n \ ) $$. 
+Then $$ \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i $$ and $$ \bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i $$
+
+Let $$ y = C_0 + C_1 x $$ be a liner function of best fit, show that if $$ \bar{x}=0, C_0 = \bar{y}, C_1 = \frac{X^TY}{X^TX} $$ 
