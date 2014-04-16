@@ -641,3 +641,33 @@ If $$ (x_1,y_1)\dots (x_n, y_n) $$ and $$ x=( \ x_1 \ \ x_2 \ \ \dots \ \ x_n \ 
 Then $$ \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i $$ and $$ \bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i $$
 
 Let $$ y = C_0 + C_1 x $$ be a liner function of best fit, show that if $$ \bar{x}=0, C_0 = \bar{y}, C_1 = \frac{X^TY}{X^TX} $$ 
+
+$$ \pmatrix{ 1 & x_1 \\ 1 & x_2 \\ \vdots & \vdots \\ 1 & x_n} \pmatrix{ c_0  \cr c_1  } = \pmatrix{y_1 \\ y_2 \\ \vdots \\ y_n } $$
+
+$$ \pmatrix{ 1 & 1 & \dots & 1 \\ x_1 & x_2 & \dots &x_n } \pmatrix{ 1 & x_1 \cr 1 & x_2 \\ \vdots & \vdots \\ 1 & x_n } \pmatrix{ c_0  \\ c_1  } = \pmatrix{ 1 & 1 & \dots & 1 \\ x_1 & x_2 & \dots & x_n } \pmatrix{ y_1 \\ y_2 \\ \vdots  \\ y_n }$$
+
+$$ \pmatrix{ n & \sum_{i=1}^{n} x_i \cr \sum_{i=1}^{n} x_i & \sum_{i=1}^{n} x^2_n } \pmatrix{ c_0  \\ c_1 } = \pmatrix{ \sum_{i=1}^{n} y_1 \\ \sum_{i=1}^{n}x_iy_i }$$
+
+$$ c_0 = \frac{1}{n}\sum_{i-1}^{n}y_1 = \bar{y}, \ \ c_1 = \frac{\sum_{i=1}^{n} x_i \ y_1}{\sum_{i=1}^{n} x_i \ x_i} = \frac{X^TY}{X^TX}$$
+
+>  $$ P=A(A^TA)^{-1}A^T $$  for $$ A $$ is an $$ m \times n $$ rank $$ n $$ Show $$ P^2  = P$$ prove $$ P^k = P $$.
+
+>  $$ P^2 = [A \ (A^TA)^{-1} \ A^T][A \ (A^TA)^{-1} \ A^T] $$
+
+>  $$ = A \ (A^TA)^{-1} \ A^TA(A^TA)^{-1} \ A^T $$
+
+>  $$  = A\ (A^TA)^{-1}A^T = P $$
+
+>  Prove $$ P^k = P $$
+
+>  Assume $$ P^n = P $$ show true for $$ m + 1 $$
+
+>  $$ P \ P^m = P \cdot P $$
+
+>  $$ P^{m + 1} = P^2 = P $$
+
+> Show $$  P  $$ is $$ sym \implies P^T = P $$
+
+>  $$ (A(A^TA)^{-1} \ A^T) = (A^T)^T [ A^TA]^{-1} \ A^T = A[A^T A^{T^T}]^{-1}A^T  = A[A^TA]^{-1}A^T = P$$
+
+> $$  \implies P^T = P \implies P $$ is Symetricl
