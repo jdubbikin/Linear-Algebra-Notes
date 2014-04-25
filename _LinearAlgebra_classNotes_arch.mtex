@@ -670,4 +670,501 @@ $$ c_0 = \frac{1}{n}\sum_{i-1}^{n}y_1 = \bar{y}, \ \ c_1 = \frac{\sum_{i=1}^{n} 
 
 >  $$ (A(A^TA)^{-1} \ A^T) = (A^T)^T [ A^TA]^{-1} \ A^T = A[A^T A^{T^T}]^{-1}A^T  = A[A^TA]^{-1}A^T = P$$
 
-> $$  \implies P^T = P \implies P $$ is Symetricl
+> $$  \implies P^T = P \implies P $$ is Symmetrical
+
+## 5.4 Inner Product Space
+
+Def:- 
+An inner product on a vector space $$ V $$ is an operation that assosiates a real number $$ \langle X,Y \rangle $$ to each pair of vectors $$ X,Y \in V $$ such that 
+
+1.   $$ \langle X , Y \rangle = \langle Y, X \rangle$$
+2.   $$ \langle X , X, \rangle \ge 0 $$ with equality if and only if $$ x=0 $$
+3.   $$ \langle \alpha X + \beta Y , 2 \rangle = \alpha\langle X,2\rangle + \beta \langle Y, 2 \rangle$$
+
+
+####ex) 
+1.   $$ \mathbb{R}^n \ \langle X, y \rangle = X^TY $$
+2. Weighted inner product
+3.   $$ \langle X, Y \rangle = \sum_{i=1}^{n} w_i $$
+
+####1a)
+
+>  $$ A=\pmatrix{ 3 & 4 \cr 6 & 8 }\rightarrow\pmatrix{ 3 & 4 \cr 0 & 0 }\implies R(A^t) $$ has a basis $$ \pmatrix{ 3  \cr 4  } $$
+
+>  $$ \pmatrix{ 3 & 4 \cr 0 & 0 } \pmatrix{ x_1  \cr x_2  } = \pmatrix{ 0  \cr 0  } \implies \pmatrix{ x_1  \cr x_2  } = \pmatrix{ 4  \cr -3  }$$ 
+
+>  $$ N(A) $$ has the basis $$ \pmatrix{ 4  \cr -3  } \ \ R(A) $$ has the basis $$ \pmatrix{ 2  \cr -1  } $$
+ 
+> $$ N(a) $$$$ \pmatrix{ 1 & 2 \cr 0 & 0 } \pmatrix{ x_1  \cr x_2  } = \pmatrix{ 0  \cr 0  } \implies \pmatrix{ x_1  \cr x-2  } = \pmatrix{ 2  \cr -1  } $$
+
+>  The Basis for $$ N(A^T) $$ is $$ \pmatrix{ 2  \cr -1  } $$ or $$ \pmatrix{ -2  \cr 1  } $$
+
+####1c)
+
+>  $$ A=\pmatrix{ 4 & -2 \cr 1 & 3 \cr 2 & 1 \cr 3 & 4 } \rightarrow \pmatrix{ 1 & 0 \cr 0 & 1 \cr 0 & 0 \cr 0 & 0 } $$ Basis for $$ R(A) $$ is $$ \pmatrix{ 1  \cr 0  } \ \pmatrix{ 0  \cr 1  } $$ 
+
+>  $$ N(A) \ \ \ \pmatrix{ 1 & 0 \cr 0 & 1 \cr 0& 0 \cr 0 & 0 } \pmatrix{ x_1  \cr x_2  } = \pmatrix{ 0  \cr 0  } \implies \pmatrix{ x_1  \cr x_2  } = \pmatrix{ 0  \cr 0  }$$
+
+
+####ex)
+
+>  $$ e[a,b] $$
+
+>  $$ \langle \ f, g \ \rangle = \int_{a}^{b} f \cdot g \ dx  $$ or weighted $$ \langle \ f, g \ \rangle = \int_{a}^{b} w \ f \cdot g \ dx $$ where $$ w( \ x \ )> 0 $$
+
+Define length or norm. $$ \|v\| = \sqrt{\langle v, v, \rangle} $$
+
+1.   $$ \langle v, v \rangle = \sum v_i^2 \ \ \ \ \|v\| = \sqrt{\sum v_i^2}$$
+2.   $$ u \perp v \iff \langle u, v\rangle = 0 $$
+
+
+####Thm : Pythagorean Law
+
+$$ u \perp v \ \ \ \| u + v \|^2 = \| u \|^2 + \| v \|^2$$
+
+$$ \| u + v \|^2 = \langle u + v , u + v \rangle = \langle u, u \rangle + \overbrace{\langle v, u \rangle + \langle u , v \rangle}^{=0} + \langle v, v \rangle = \| u \|^2 + \| v \|^2 $$
+
+
+####ex)
+
+>   $$ e[-1, 1] $$
+
+>   $$ u = 1 \ , \ \ v = x^2 \ \ \ \ \langle 1 , x^2 \rangle = \int_{-1}^{1} 1 \cdot x^2 \ dx \ = \ 0  $$
+
+>   length $$ \| 1 \|^2 = \langle 1, 1 \langle = \int_{-1}^{1} 1 \cdot 1 \ dx = 2  $$
+
+>   $$ \| x^3 \| ^2 = \langle x^3 , x^3 \rangle = \int_{-1}^{1} x^3 \cdot x^2 \ dx = \frac{2}{7}  $$
+
+>   So $$ \| 1 \| = \sqrt{2} \ \ \ \ \| x^3 \| = \sqrt{\frac{2}{7}} $$
+
+>   One can say $$ \| 1 + x^2 \| = \frac{16}{7} = 2 + \frac{2}{7} $$
+
+
+#### For $$ \mathbb{R}^{m\times n} $$ Frobeio's Norm.
+
+$$ \| \cdot \|_f $$ where 
+
+$$ \| A \|_f = \langle A, A \rangle^{\frac{1}{2}} = \pmatrix{ \sum_{i=1}^{n} \sum_{j=1}^{n} a_{i j}^{2} }^{\frac{1}{2}} $$
+
+####e.g. 
+$$ A = \pmatrix{ 1 & 2 & 4 \cr -1 & 3 & 2 } \ \ \ \|A\|_f = \pmatrix{ 1+4+16+1+9+4}^{\frac{1}{2}} = \sqrt{35}$$ 
+
+Consider $$ P_n(x) $$ polynomials of degree $$ < \ n $$. Let $$ {x_1, \dots , x_n} $$ be $$ n $$ distinct numbers. Let $$ p(x), \ q(x) \in P_n(x) $$
+
+$$ \langle p, q \rangle = \sum_{i=1}^{n} p(x_i)q(x_i) $$ 
+
+is also the inner product. 
+
+1.   $$ \langle P, p \rangle = \sum_{i=1}^{n} P^2 (x_i) \ge 0$$ 
+
+2.   Since $$ \sum_{i=1}^{n} p(x)q(x_i) = \sum_{i=1}^{n} Something $$
+
+3.   $$ \langle \alpha p + \beta q, n \rangle = \sum_{i=1}^{n} \lgroup \ \alpha \ p(x_i) + \beta \ p \ (x_i) \ \rgroup \ r(x_i) = \sum_{i=1}^{n} \matrix{ \alpha \ p(x_i) & \dots \cr \vdots } $$ 
+
+#### e.x.
+
+>   $$ x_i = \frac{i-1}{2}, \ \ i = 1, 2, 3, \ \ \ \ \ x_1 = 0, \ \ x_2 = \frac{1}{2}, \ \ x_3 = 1 $$
+
+>   $$ \| 2x \| = \sqrt{\langle 2x, 2x \rangle} = \lgroup \sum_{i=1}^{n} 4x^2 \rgroup ^{\frac{1}{2}} = (0 + 1 + 4 )^{\frac{1}{2}} = \sqrt{5}$$
+
+
+####Def:
+
+If $$ u_1 v_1 \in V $$ and $$ \sqrt{ } \ne 0 $$ Then the scalar projection of $$ u $$ onto $$ v $$ is $$ \alpha = \frac{\langle u, v \rangle}{\| v \|} $$ the vector projection 
+
+$$ P = \alpha \pmatrix{ \frac{v}{\| v \|}} = \pmatrix{ \frac{\langle u,v \rangle}{\| v \|} }^{\frac{1}{2}}$$
+
+#### The Couchy Schwartz Inequality
+
+let $$ u $$ and $$ v $$ be the inner product space $$ V $$, 
+then $$ \lvert \langle u, v \rangle \rvert \le \| u \| \| v \|$$ with equality $$ \iff u = \alpha \ v $$ 
+i.e. $$ u $$ and $$ V $$ are linearly independent. 
+
+#### Proof
+
+If $$ v \equiv 0 \ \ \ \ \lvert \langle u, v \rangle \rvert = \| u \| \cdot 0 = 0$$
+
+Let $$ P $$ be the vector projection of $$ u $$ onto $$ v $$, since $$ P $$ and $$ U \cdot P $$ are orthogonal
+
+$$ \| u - p \|^2 + \|p \|^2 = \| u \|^2$$
+
+so
+
+$$ \| p \|^2 = \| u \|^2 - \| u - p \|^2 = \bigg\lbrack \cfrac{\lvert \langle u, v \rangle \rvert }{\| V \|^2} \cdotp \| v \|^2 \bigg\rbrack $$
+
+$$ \implies \lvert \langle u, v \rangle \rvert = \| v \|^2 \pmatrix{ \| u \|^2 - \| u - p \|^2 } \le \|v\|^2\|u\|^2 $$
+
+$$ \implies \lvert \langle U, V \rangle \rvert \le \| u \| \| v \| $$
+
+equality $$ \iff \| u - p \|^2  = 0 \implies u = p $$ either $$ v=0  $$ or $$ u $$ and $$ v $$ are in the same direction since.
+
+$$ \lvert \langle u, v \rangle \rvert \le \|u\|\|v\| \le \langle u, v \rangle \le \|u\|\|v\|-1 \le \cfrac{\langle u, v \rangle}{\|u\|\|v\|} = \cos(\theta) $$
+
+
+#### Def:-
+Normalled linear vector space given a vector space $$  V  $$ if each $$ v\in V $$ has a real number .............
+
+1.   $$ \|v\| \ge 0 \ \ \ \| v \| = 0 \iff v = 0 $$
+
+2.   $$ \| \alpha \| = | \alpha | \|v\| \Delta $$ inequality. 
+
+3.   $$ \| u + v \| \le \| u \| + \| v \| $$
+
+
+#### Theorem. 
+If $$ V  $$ is an inner ptroduct space, then 
+
+$$  \|v\| = \langle v, v \rangle ^{\frac{1}{2}} \ \ \forall \ \ v \in V $$ 
+
+defines a norm on $$ V $$
+
+1.   $$ \langle v, v \rangle^\frac{1}{2} \ge 0  $$ SInce $$ \langle v, v, \rangle \ge 0 $$
+
+2.   $$ \| \alpha v \| = \langle \alpha \ v,  \alpha \ v \rangle ^ \frac{1}{2} = \lbrack\alpha^2 \langle v, v \rangle \rbrack ^\frac{1}{2} = \pmatrix{ \alpha ^2 } ^\frac{1}{2} \ \langle v, v \rangle ^\frac{1}{2} = \lvert \ \alpha \ \rvert \langle v, v \rangle^\frac{1}{2} = \lvert \ \alpha \ \rvert \| v \|$$
+
+3.   $$ \| u + v \|^2 = \langle u + v, u + v \rangle = \langle u, u \rangle + 2 \langle u, v \rangle + \langle v, v \rangle \le \| u \|^2 + 2 \| u \| \| v \| + \| v \| ^2 \le \pmatrix{ \| u \| + \| v \| }^2 $$
+
+$$ \| u + v \| \le \| u \| \| v \| $$ 
+
+Some other norms $$ V\equiv \mathbb{R}^n $$
+
+1.   $$ \| x \|_1 = \sum_{i=1}^{n} \lvert x_1 \rvert $$
+
+2.   $$ \|x\|_\infty = \underset{i}{\max} \lvert x_i \rvert $$
+
+3.   P-norm $$ \| x\|_p = \bigg\lbrack \sum_{i=1}^{n} \lvert x_i \rvert ^P \bigg\rbrack ^ \frac{1}{P} $$ for $$ P = 2 \implies $$ Euclidian Norm. $$ \iff P \ne P_0 $$ Theorem won't hold. 
+
+#### Def:-
+If $$  x, y \in V $$ where $$ V $$ is a N.L.V.S, then $$  \| x - y \| \equiv $$ to the distance between $$ x $$ and $$ y $$
+
+####e.x
+ 
+>    Suppose $$  \langle f, g \rangle = \int_{-1}^{1} f \cdot g \ dx  \  $$  define  $$ \| \cdot \| = \langle f, g \rangle^\frac{1}{2}$$
+
+>   if $$ f = x  $$ and $$  g = x^2 $$
+
+>   $$ \| \ f - g \ \| = \| \ x - x^2 \ \| =  \bigg\lbrack \int_{-1}^{1} (x-x^2)(x-x^2) dx \bigg\rbrack ^\frac{1}{2}  $$ = distance between functions
+
+## 5.5 Ortho Normal Spaces (sets)
+
+#### Def:-
+Let $$ \lbrace v_1, v_2, \dots , v_n  \rbrace  $$ be non zero vectors in an inner product space $$ V $$ if $$  \langle v_i, v_i \rangle = 0 $$ whenever $$  i \ne i $$ then the set is said to be orthogonal
+
+####e.g.
+
+>   $$ \pmatrix{ 1 \cr 2 \cr 1  }, \pmatrix{ 2 \cr -1 \cr 0 } ,\pmatrix{ 2 \cr 4 \cr -10 } $$ is an orthogonal set. 
+
+#### Thm:-
+If $$ \lbrace v_1,  \dots , v_n \rbrace $$ is an orthogonal set of vectors in an inner product $$  V $$, then $$ \lbrace v_1,  \dots , v_n \rbrace $$ is linearly independent. From
+
+$$ c_1 v_1 + c_2 v_2 + \dots +c_nv_n = 0 $$
+
+$$ \langle c_1v_1 + c_2v_2 + \dots c_nv_n, v_i \rangle = 0 $$
+
+$$ c_1 \langle v_1, v_i \rangle + c_2 \langle v_2, v_i \rangle + \dots + c_n \langle v_n, v_i \rangle = 0$$
+
+$$ \implies c_i \langle v_j, v_i \rangle = 0$$
+
+$$ c_i \| v_i \|^2 = 0 $$
+
+$$ \implies c_i = 0 $$
+
+#### Def:-
+An orthogonal set of vectors is an Orthogonal set of unit vectors. The set $$ \lbrace u_1, u_2, \dots , u_n \rbrace  $$ is orthogonal is $$  \langle u_i, u_i \rangle = \delta_ij = \cases{1, & i = j \cr 0, & i ≠ j}$$    (Kronken Delta Function)
+
+
+#### Def:-
+Suppose $$ B = \lbrace u_1, u_2, \dots, u_n \rbrace $$ is an orthonormal basis for $$ S $$, then $$  S = span(u-1, \dots , u_n) $$
+
+####Perseval's Formula. 
+
+if $$ \lbrace u_1, u_2, \cdots , u_n\rbrace $$ is an orthonormal basis for an inner product space $$ V $$ and $$ V=\sum_{i=1}^{n} c_iu_i $$ then $$  \| u \|^2 = \sum c_i^2 $$
+
+
+####e.g.
+>   $$ u_1 = \pmatrix{\frac{1}{\sqrt{5}} \ , \ \frac{2}{\sqrt{5}}} \ , \ u_2 = \pmatrix{\frac{-2}{\sqrt{5}} \ , \ \frac{1}{\sqrt{5}}} $$ 
+
+>   if $$ X\in \mathbb{R}^2 $$ then $$ X^Tu_1 = \cfrac{x_1 + 2x_2}{\sqrt{5}} $$    and   $$ X^Tu_2 = \cfrac{-2x_1 + x_2}{\sqrt{5}} $$
+
+>   $$ \| x \| ^2 =  \pmatrix{\cfrac{x_1 + 2x_2}{\sqrt{5}}} + \pmatrix{\cfrac{-2x_1 + x_2}{\sqrt{5}}} = x_1^2 + x_2^2 $$
+
+
+### Orthogonal Matrices
+
+#### Def:-
+An $$ n \times n $$ matrix $$ Q $$ is called orthogonal if the Column vectors of $$ Q $$ form an orthogonal set in $$ \Rn $$ 
+
+#### Thm:-
+ An $$ n\times n $$ matrix $$ Q $$ is orthogonal $$ \iff Q^TQ\cdot I = Q^{-1} = Q^T $$ 
+
+$$ Q =  \rotateDD  $$
+
+$$ \bigg\| \pmatrix{\cos(\theta) \\ \sin(\theta) } \bigg\| = \cos^2(\theta)+\sin^2(\theta) = 1$$
+
+$$ Q^T = \pmatrix{ \cos(\theta) & \sin(\theta) \cr -\sin(\theta) & \cos(\theta) } $$
+
+$$ Q^TQ = \pmatrix{ \cos(\theta) & \sin(\theta) \cr -\sin(\theta) & \cos(\theta)} \rotateDD = $$
+
+$$\pmatrix{ \cos^2(\theta)+\sin^2(\theta) & -\cos(\theta)\sin(\theta)+\cos(\theta)\sin(\theta) \cr -\sin(\theta)\cos(\theta)+\sin(\theta)\cos(\theta) & \sin^2(\theta)+\cos^2(\theta) } = \pmatrix{1 & 0 \cr 0 & 1} = I$$ 
+
+If $$ Q $$
+ is an $$ n\times n $$ orthogonal matrix, 
+
+1. The Column vectors are orthogonal in $$ \Rn $$
+
+2.    $$ Q^TQ = I $$
+
+3.    $$ Q^{-1}  = Q^T$$
+
+4.    $$ \langle  \ Q_x \ , \ Q_y \ \rangle = \langle  \ x \ , \ y \ \rangle $$ 
+
+5.    $$ \| Q_x \|_2 = \| x \|_2 $$
+
+
+## Least Squares. 
+
+Solve $$ Ax = b  $$ for $$ A: m \times n $$ then $$ A^TA\hat{x} = A^Tb $$
+
+### Thm:-
+If the columns of $$ A $$ form an orthoganal set on $$ \Rn $$ then $$ A^TA = I $$ and $$ \hat{x} = A^Tb $$
+
+#### e.x.
+
+Find the best least squares approximation to $$ \cos (x) $$ on $$ [0, 1] $$ by a linear function. 
+
+Let $$ S $$ be the subspace of all linear functions in $$ C[0, 1] $$, then $$ u_1 = 1 \ , \ u_2 = \sqrt{12} \ ( \ x \ - \ \frac{1}{2}) $$ is an orthogonal set of vectors. 
+
+Let 
+
+$$ c_1 = \int_{0}^{1} u_1 \cos(x) \ dx = 1 \\ c_2 = \int_{0}^{1} u_2 \cos(x) \ dx = \sqrt{12} \ \int_{0}^{1} \bigg(x - \cfrac{1}{2} \bigg) cos(x) \ dx $$
+
+$$ = \bigg( \cfrac{1}{2} \ \sin(1)  + \cos(-1)  \ \bigg)x + \bigg(\cfrac{3}{4}\sin(1) - \cfrac{1}{2}\cos(1) + \cfrac{1}{2} \bigg)$$
+
+
+
+# Class Notes 03/26/2014
+
+Let $$ L(x) = (x_2 + x_3, x_1+x_3, x_1+x_2)^T $$ Determin the standard matrix. 
+
+$$ L(e_1)= L\pmatrix{ 1 \\ 0 \\ 0 } = \pmatrix{0 \\ 1 \\ 1 } $$ 
+
+$$ L(e_2)= L\pmatrix{ 0 \\ 1 \\ 0 } = \pmatrix{1 \\ 0 \\ 1 } $$  
+
+$$ L(e_3)= L\pmatrix{ 0 \\ 0 \\ 1 } = \pmatrix{1 \\ 1 \\ 0 } \\  $$
+
+$$ A = \pmatrix{ 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0} $$
+
+$$ L\pmatrix{1 \\ 3 \\ 2} = A \pmatrix{ 1 \\ 3 \\ 2 } = \pmatrix{ 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0}\pmatrix{ 1 \\ 3 \\ 2 }= \pmatrix{ 5 \\ 3 \\ 4 }$$
+
+
+Let $$ A $$ and $$ B $$ be similar matrices, $$ \lambda $$ is any scalar. Show $$ A - \lambda I $$ and $$ B - \lambda I $$ are similar.
+
+$$ A = S^{-1}BS $$
+
+$$ A-\lambda I = S^{-1}BS - \lambda I $$
+
+$$ A-\lambda I = S^{-1}BS -S^{-1}A(\lambda I) = S^{-1}BS - S^{-1}(\lambda I)S $$
+
+$$ A-\lambda I = S^{-1}(B-\lambda I)S \implies A-\lambda I $$ and $$ B-\lambda I $$ are similar
+
+
+
+ 
+
+Let $$ A $$ be $$ n \times n $$, if there exists a nonzero vector $$ x $$, so that $$ Ax = \lambda x $$ for some scalar $$ \lambda $$, then we call $$ \lambda $$ an Eigenvalue of $$ A $$ and $$ x $$ is the associated Eigenvector (Not Unique)
+
+#### e.x.
+>   $$  A = \pmatrix{3 & -3 \\ -4 & 2 } \ , \ x = \pmatrix{-2 \\ 2} $$
+
+>   $$ Ax = \pmatrix{3 & -3 \\ -4 & 2 }\pmatrix{-2 \\ 2} = \pmatrix{ -12 \\ 12 } = 6\pmatrix{-2 \\ 2 } = 6 x $$
+
+>   So $$ Ax = 6x \ , \ \lambda=6 \ , \ x = \pmatrix{ -2 \\ 2 } $$ 
+
+
+If $$ A $$ is $$ n\times n $$ and $$ \lambda $$ is an eigenvalue with eigenvectors $$ x $$
+
+a. $$ \lambda $$ is an eigenvalue of a. 
+
+b. $$ (A-\lambda I)x $$ has nontrivial solutions. 
+
+c.   $$ N(A-\lambda ) \ne 0 $$.
+
+d. $$ A-\lambda I  $$ is singular. 
+
+e.   $$  \det(A-\lambda I) = 0 $$.
+
+The last part $$  \det(A-\lambda I) \equiv n^{th} $$ order polynomial in $$ \lambda $$ is called the Characteristic Ploynomial.
+
+#### e.g.
+FInd the eigenvalues and eigenvectors for $$ A = \pmatrix{ 1 & 5 \\ 2 & -2 } $$
+
+Form $$ (A- \lambda I) = \pmatrix{ 1-\lambda & 5 \\ 2 & -2-\lambda } $$ 
+
+We want $$ \det (A-\lambda I) = \bigg \lvert \matrix{ 1-\lambda & 5 \cr 2 & -2-\lambda } \bigg \rvert  = 0$$
+
+$$ (1-\lambda)(-2-\lambda) - 10 = 0 $$
+
+$$ \lambda^2 + \lambda - 12 = 0 \implies (\lambda +4)(\lambda -3) = 0 $$
+
+$$ \lambda = -4 \ , \ \lambda = 3 $$
+to get the eigenvectors $$  x_1 , x_2 $$ solve $$ (A-\lambda I)x = 0 $$ 
+
+$$ \lambda_1 = -4 \ , \ \bigg \lvert \matrix{ 1-(-4)  & 5 \cr 2 & -2-(-4) } \bigg \rvert  = \pmatrix{ 5 & 5 \cr 2 & 2 } x_1 = \pmatrix{ 0 \\ 0 } \implies x_1 \alpha \pmatrix{ 1 \\ -1 }$$
+
+$$ \lambda_2 = 3 \ , \ \bigg \lvert \matrix{ 1-3  & 5 \cr 2 & -2-3 } \bigg \rvert  = \pmatrix{ -2 & 5 \cr 2 & -5 } x_2 = \pmatrix{ 0 \\ 0 } \implies x_2 \alpha \pmatrix{ 5 \\ 2 }$$
+
+eigenspace has basis vectors $$  \pmatrix{ 1 \\ -1} \ , \ \pmatrix{ 5 \\ 2 } $$
+
+$$ v \in  $$ eigenspace of $$ A \iff v = c_1 \pmatrix{ 1 \\ -1} + c_2 \pmatrix{ 5 \\ 2 } $$
+
+In General
+
+$$ A= \pmatrix{ a & b \cr c & d } $$
+
+$$ A - \lambda I =  \bigg \lvert \matrix{ a-\lambda  & b \cr c & d-\lambda } \bigg \rvert = (a-\lambda)(d-\lambda) - bc = 0 $$ 
+
+$$\implies \lambda^2 - \mathrm{tr}(A)\lambda + \det(A) = 0 $$
+
+#### Thm:-
+If $$ A $$ and $$ B $$ are similar, they have the same characteristic polynomials. $$ \implies $$ same eigenvalues. ( eigenvectors will be diffwerent, possibly )
+
+### Complex Eigenvalues. 
+
+$$ Ax = \lambda x $$ and $$ A $$ is Real and $$ \lambda  $$ is complex,
+
+$$ \bar{Ax} = \bar{\lambda x} $$
+
+$$ A\bar{x} = \bar{\lambda} \bar{x} $$
+
+$$ \implies \bar{x} $$ is a eigenvector assosciated with $$ \bar{\lambda} $$
+
+$$ \lambda = a-b\bar{\mathbb{i}} \ , \ \bar{\lambda} = a-b\mathbb{i} $$
+
+$$ \lambda = 1 - 3\mathbb{i} \ , \ \bar{\lambda} = 1 +3\mathbb{i} $$
+
+### Systems of constant coefficient. linear differential equations. 
+
+In 1-D $$ y\prime = 3y $$ is a 1^st order differential equation. 
+
+$$ y  \ \alpha  \ \mathbb{e}^{3t} \ , \  y = c\mathbb{e}^{3t}  $$
+
+$$ y \prime = c(3\mathbb{e}^{3t}) = 3(c\mathbb{e}^{3t})  = 3y$$
+
+In general 
+
+$$ y \prime = a y $$ 
+
+
+assume
+
+$$ y(t)=\mathbb{e}^{\lambda t} $$
+
+$$ \lambda \mathbb{e}^{\lambda t} \implies \lambda = a $$
+
+The solution is 
+
+$$ y = c \mathbb{e}^{a t} $$
+
+#### First order systems
+
+$$ \pmatrix{ \matrix{y_1\prime & = & a_{11}y_1 & + & a_{12}y_2 & + & \dots & + & a_{1n} y_n } \\ \matrix{ y_2\prime & = & a_{21}y_1 & + & a_{22}y_2 & + & \dots & + & a_{2n} y_n } \\ \matrix{\vdots &  \ &  \  & \vdots & \ & \ & \ & \vdots & \ & \ & \ & \ & \ & \vdots } \\ \matrix{y_n\prime & = & a_{n1}y_1 & + & a_{n2}y_2 & + & \dots & + & a_{nn} y_n } }$$
+
+In part 2-D 
+
+$$ y_1\prime = a y_1 + b y_2 \\ y_2\prime = c y_1 + d y_2$$
+
+$$ A = \pmatrix{ a_{\imath \jmath} } $$
+
+$$ Y = \pmatrix{y_1, y_2, \dots y_n}^T $$
+
+$$ Y\prime = \pmatrix{y_1\prime, y_2\prime, \dots y_n\prime}^T $$
+
+$$ Y\prime = A Y $$ looks like 1-D $$ y\prime = ay $$ Look for solution to 
+
+$$ Y = \pmatrix{x_1 \mathbb{e}^{\lambda t} \cr x_2\mathbb{e}^{\lambda t} \cr \vdots \cr x_n\mathbb{e}^{\lambda t}} = \mathbb{e}^{\lambda t}x$$
+
+Where $$ x= \pmatrix{x_1, x_2, \dots , x_n}^T $$ if $$ Y = \mathbb{e}^{\lambda t} = \lambda \mathbb{e}^{\lambda t} x $$
+
+$$ \mathbb{e}^{\lambda t} \ne 0 $$ devide by it $$ Ax = \lambda x $$  standard eigenvalue problem
+
+In General we solve 
+
+$$ Y\prime = AY $$
+
+for initial condition $$ Y(0)=Y $$
+
+#### e.g.
+$$ y_1 \prime = 2y_1 + 2y_2 \ , \ y_1(0)=3$$
+
+$$ y_2 \prime = 2y_1 + 5y_2 \ , \ y_2(0)=1$$
+
+So
+
+$$ Y^\prime = \pmatrix{2 & 2 \cr 2 & 5}Y $$
+
+for $$ Y = \pmatrix{ y_1 \\ y_2} $$ and $$ A = \pmatrix{2 & 2 \\ 2 & 5} $$
+
+The Characteristic polynomial is
+
+$$ \lambda^2 - 7 \lambda + 6 = 0 $$
+
+$$ (\lambda - 6)( \lambda -1) = 0 $$
+
+$$ \lambda_1 = 1  $$ Solve $$ (A - \lambda I)x = 0 $$
+
+$$ \pmatrix{ 1 & 2 \cr 2 & 4 }x_1 = \pmatrix{ 0 \\ 0} \ , \ x_1 \ \alpha \pmatrix{ 2 \\ -1 } $$
+
+$$ \lambda_2 = 6 $$ Solve $$ (A - \lambda I)x = 0 $$
+
+$$ \pmatrix{ -4 & 2 \cr 2 & -1 }x_2 = \pmatrix{ 0 \\ 0} \ , \ x_2 \ \alpha \pmatrix{ 1 \\ -2 }$$
+
+The solution is 
+
+$$ Y = c_1 \pmatrix{ 2 \\ -1 } \mathbb{e}^{t} + c_2 \pmatrix{ 1 \\ 2 } \mathbb{e}^{6t} $$
+
+$$ t = 0 \ , \ Y(0) = \pmatrix{ 2c_1 + c_2 \\ -c_1 + 2c_2 } = \pmatrix{ 3 \\ 1 }   \implies c_1 = c_2 = 1$$
+
+$$ Y(t) = \pmatrix{ y_1(t) \\ y_2(t) } = \pmatrix{ 2 \\ -1 } \mathbb{e}^t + \pmatrix{ 1 \\ 2 } \mathbb{e}^{6t}$$
+
+
+#### // insert a picture of tank mixing problem. 
+
+> Tank A initially has 40g of salt, 
+
+> Tank B initially has 100g of salt.
+
+> Find the amount of salt in either tank at time $$ (t) $$
+
+> Let $$ y_1(t) =  $$ the amount of salt in tank A
+
+> and $$ y_2(t) =  $$ the amount of salt in tank B
+
+> Concentration in A is $$ \dfrac{y_1(t)}{100} $$, B is $$ \dfrac{y_2(t)}{500} $$
+
+> $$ \dfrac{dy_1}{dt} \equiv $$ of the rate of change of the salt in tank A
+
+> $$ \dfrac{dy_2}{dt} \equiv $$ of the rate of change of the salt in tank B
+
+> $$ \dfrac{dy_1}{dt} = - \bigg(\dfrac{y_1}{100} \bigg)(30) + \bigg(\dfrac{y_2}{500}\bigg)(10) $$
+
+> $$ \dfrac{dy_2}{dt} =  \bigg(\dfrac{y_1}{100} \bigg)(30) - \bigg(\dfrac{y_2}{500}\bigg)(10) - \bigg (\dfrac{y_2}{500} \bigg )(20) $$
+
+> $$ \dfrac{dy_2}{dt} = - \bigg(\dfrac{y_1}{100} \bigg)(30) - \bigg(\dfrac{y_2}{500}\bigg)(30) $$
+
+> $$ Y_1(0) = 40g \ , \ y_2(0) = 100g $$
+
+> Define $$ Y = \pmatrix{ y_1(t) \\ y_2(t)} $$
+
+> $$ Y^\prime = \pmatrix{-\frac{3}{1} y_1 - \frac{1}{50} y_2 \\ \frac{3}{10} y_1 - \frac{3}{50} y_2 }$$ 
+
+> $$ Y^\prime = AY \ , \ A = \pmatrix{-\frac{3}{10} & \frac{1}{50} \\ \frac{3}{10} & -\frac{3}{50}} $$
+
+> $$ Y_0 = \pmatrix{ 40 \\ 100 }$$
+
+> Assume $$ Y = x\mathbb{e}^{\lambda t} $$
+
+> $$ \lambda^2 + \frac{18}{50}\lambda - \frac{6}{500} = 0 $$
+
+> Charcteristic Polynomial is 
+
+> $$ \lambda^2 + \frac{9}{25}\lambda - \frac{3}{250} = 0 \implies \lambda_1 \ , \ \lambda_2$$ 
