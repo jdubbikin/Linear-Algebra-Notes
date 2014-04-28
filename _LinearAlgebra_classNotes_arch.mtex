@@ -1450,3 +1450,377 @@ $$ e^{tA} = Xe^{tD}X_1 \implies Y(t) = xe^{tD}X^{-1}Y_0 = Xe^{tD}c \space for \s
 $$ e^{tD} = \pmatrix{e^{t \lambda_1} & 0 & 0 \\ 0 & \ddots & 0 \\ 0 & 0 & e^{ t \lambda_n}} $$
 
 $$ Y(t) = c_1 x_1 e^{\lambda_1 t} + c_2 x_2 e^{\lambda_2 t} + \dots + c_n x_n e^{\lambda_n t} $$
+
+# Class Notes 20140409
+## 6.1
+
+1a) $$ A = \pmatrix{ 3 & 2 \cr 4 & 1 } \space \bigg\vert A-\lambda I \bigg\vert = \pmatrix{ (3-\lambda) & 2 \cr 4 & (1-\lambda) } $$
+
+Characteristic Polynomial $$ \lambda^2 -4\lambda-5 = 0 = (3-\lambda) ( 1-\lambda) - 8 = 0$$
+
+for $$ 2 \times 2 \space \ \space \lambda^2 - Tr(A)\lambda + \det(A) = 0 $$
+
+$$ \lambda_1 = -1 \space \pmatrix{ 4 & 2 \cr 4 &  2 }x_1 = 0 \implies x_1 = \pmatrix{ 1 \\ -2 } $$
+
+$$ \lambda_2 = 5 \space \pmatrix{ -2 & 2 \cr 5 & -5 }x_2 = 0 \implies x_2 = \pmatrix{ 1 \\ 1 } $$
+
+> for
+>>   $$ \lambda_1 $$ eigenspace $$ \alpha \pmatrix{1 \\ -2} $$ 
+
+>>   $$ \lambda_2 $$ eigenspace $$ \alpha \pmatrix{1 \\ 1 } $$
+
+1c)
+>   $$ \pmatrix{ 3 & -1 \cr 1 & 1 } $$ Characteristic polynomial is $$ \lambda^2 -4\lambda +4 = 0 $$
+
+>   $$ (\lambda - 2 )=0 \space \lambda_1 = \lambda_2 = 2 $$ Multiplicity of 2
+
+>   $$ \pmatrix{ 1 & -1 \\ 1 & -1 } x_1 = 0 \implies x_1 = \pmatrix{ 1 \\ 1 } $$ Called Defective. 
+
+1)a
+
+>   $$ \pmatrix{ 1 & 1 & 1 \\ 0 & 2 & 1 \\ 0 & 0 & 1 } $$ since upper triangular $$ \implies  $$ Eigenvalues are diagonal elements. 
+
+>   $$ \lambda_1 = \lambda_2 = 1 \space \lambda_3 = 2 $$
+
+>   $$ \lambda_1 = \lambda_2 = 1 \space \pmatrix{ 0 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 0 }x = \pmatrix{ 0 \\ 0 \\ 0 } $$ 
+
+>   $$ x = \pmatrix{ \alpha \\ \beta \\ -\beta } = \alpha\pmatrix{ 1 \\ 0 \\ 0} + \beta\pmatrix{ 0 \\ 1 \\ -1 } $$ two linearly independent Eigenvectors
+
+>   $$ \lambda_3 = 2 \space \pmatrix{ -1 & 1 & 1 \\ 0 & 0 & 1 \\ 0 & ) & -1 }x_3 = 0, $$
+
+>   $$ x_3 = \pmatrix{ a \\ b \\ c } \implies c=0 \implies -a+b=0 \implies a = b $$
+
+>   $$ x_3 = \pmatrix{ 1 \\ 1 \\ 0 } $$
+
+1i)
+>   $$ \pmatrix{ 4 & -5 & 1 \\ 1 & 0 & -1 \\ 0 & 1 & -1 } $$ Characteristic Polynomial $$ \lambda(\lambda-1)(\lambda-2)=0 $$
+
+>   $$ \lambda_1 = 0, \ \lambda_2 = 1, \ \lambda_3 = 2 $$
+
+>   $$ \lambda_1 = 0 \space \pmatrix{ 4 & -5 & 1 \\ 1 & 0 & -1 \\ 0 & 1 & -1 }x_1 = 0 \implies x_1 = \pmatrix{ 1 \\ 1 \\ 1 } $$
+
+>   $$ \lambda_2 = 0 \space \pmatrix{ 3 & -5 & 1 \\ 1 & -1 & -1 \\ 0 & 1 & -2 }x_2 = 1 \implies x_2 = \pmatrix{ 3 \\ 2 \\ 1 } $$
+
+>   $$ \lambda_3 = 0 \space \pmatrix{ 2 & -5 & 1 \\ 1 & -2 & -1 \\ 0 & 1 & -3 }x_3 = 2 \implies x_3 = \pmatrix{ 7 \\ 3 \\ 1 } $$
+
+1l)
+
+>   $$ \lambda_1 = 1, \ x_1 = \pmatrix{ 0 \\ 1 \\ 0 \\ 0 } $$
+
+>   $$ \lambda_2 = \lambda_3 = 2, \ x_1 = \pmatrix{ 0 \\ 0 \\ 1 \\ 0 } $$
+
+>   $$ \lambda_4 = 3, \ x_3 = \pmatrix{ 1 \\ 2 \\ 0 \\ 0 } $$
+
+> Defective since $$ \lambda_2 = \lambda_3 = 2 $$ only has 1 eigenvector. 
+
+$$ A $$ is $$ n \times n \det( A - 0 \cdot I ) = 0 \implies \lambda = 0 $$ is eigenvalue.
+
+If $$ \lambda = 0 $$ is an eigenvalue $$ \implies \det( A - 0 \cdot I ) = 0 \implies \det ( A ) = 0 \implies A $$ is singular
+
+6)
+
+> $$ \lambda $$ is eigenvalue for $$ A $$ with corresponding egienvector $$ x $$ Show $$ \lambda^m $$ is an eigenvalue od $$ A^m $$ with eigenvector $$ x $$
+
+>  $$ m=1 \space Ax = \lambda x $$
+
+>  $$ m=2 \space A^2 x = \lambda A x = \lambda \lambda x \implies A^2 x = \lambda ^2 x \implies \lambda^2 $$ is an eigenvalue of $$ A^2 $$ with corresponding eigenvector $$ x $$
+
+>  Assume true for $$ m=k \space A^k x = \lambda^k x$$ Show true for $$ m= k+1 $$
+
+>  $$ A( A^k x ) = A( \lambda^k x ) $$
+
+>  $$ A^{k+1} x = \lambda^k A x = \lambda^k \lambda x = \lambda^{k+1} x$$
+
+9)
+
+> An $$ n \times n $$ matrix $$ A $$ is nilpotent if $$ A^k = 0 $$ for some positive integer k. Show all eigenvalues are 0.
+
+>  If $$ A^k = 0 \implies  $$ all eigenvectors of $$ A^k $$ are 0. But eigenvalues of $$ A^k $$ are $$ \lambda^k \implies \lambda^k = 0 \implies \lambda = 0 $$
+
+## 6.2
+
+1a)
+
+>  $$ y_1^\prime = y_1 + y_2 \ , \ Y=\pmatrix{y_1 \\ y_2}$$
+
+>  $$ y_2^\prime = -2y_1 + 4y_2 $$
+
+>  $$ Y^\prime \pmatrix{ 1 & 1 \\ -2 & 4 }Y = AY $$
+
+>  $$ A = \pmatrix{ 1 & 1 \cr -2 & 4 } \ , \ \lambda^2 - 5\lambda + 6 = 0 \implies (\lambda - 3 )( \lambda - 2) = 0$$
+
+>  $$ \lambda_1 = 2 \ \pmatrix{ -1 & 1 \\ -2 & 2 } x_1 = 0 \implies x_1 = \pmatrix{ 1 \\ 1 } $$
+
+>  $$ \lambda_2 = 3 \ \pmatrix{ -2 & 1 \\ -2 & 1 } x_2 = 0 \implies x_2 = \pmatrix{ 1 \\ 2 } $$
+
+>  $$ Y = c_1 \pmatrix{ 1 \\ 1 }e^{2t} + c_2 \pmatrix{ 1 \\ 2 }e^{3t} $$
+
+>  $$ y_1 = c_1e^{2t} + c_2 e^{3t}  \ , \ y_2 = c_1 e^{2t} + 2c_2 e^{3t} $$
+
+1c)
+
+>  $$ Y' = AY \ , \ A = \pmatrix{ 1 & -2 \cr -2 & 4 } \lambda^2 - 5\lambda = 0 \ , \ \lambda(\lambda - 5) = 0 $$
+
+>  $$ \lambda_1 = 0 \ , \ \pmatrix{ 1 & -2 \cr -2 & 4 }x_1 = 0 \implies x_1 = \pmatrix{ 2 \\ 1 } $$
+
+>  $$ \lambda_2 = 5 \ , \ \pmatrix{ -4 & -2 \cr -2 & -1 }x_2 = 0 \implies x_2 = \pmatrix{ 1 \\ -2 } $$
+
+> then $$ Y = c_1 \pmatrix{ 2 \\ 1 } e^{0 \cdot t} + c_2 \pmatrix{ 1 \\ -2 } e^{5t}$$
+
+>  $$ y_1 = 2c_1 + c_2 e^{5t} $$
+
+>  $$ y_2 = c_1 + 2c_2 e^{5t} $$
+
+1f)
+
+>  $$ A = \pmatrix{ 1 & 0 & 1 \\ 0 & 2 & 6 \\ 0 & 1 & 3 } \ , \ Y = \pmatrix{ y_1 \\ y_2 \\ y_3 } $$
+
+>  $$ Y' = AY \bigg\vert A - \lambda I \bigg\vert = ( 1-\lambda )( \lambda^2 - 5\lambda) = ( 1 - \lambda )\lambda( \lambda - 5 ) = 0 $$
+
+>  $$ \lambda_1 = 0 \ , \  \lambda_2 = 1 \ , \ \lambda_3 = 5 $$
+
+>  $$ \lambda_1 = 0 \ , \ x_1 = \pmatrix{ -1 \\ -3 \\ 1 } $$
+
+>  $$ \lambda_2 = 1 \ , \ x_2 = \pmatrix{ 1 \\ 0 \\ 0 } $$
+
+>  $$ \lambda_3 = 5 \ , \ x_3 = \pmatrix{ 1 \\ 8 \\ 4 } $$
+
+>  $$ Y = c_1 \pmatrix{-1 \\ -3 \\ 1} e^{0t} + c_2 \pmatrix{ 1 \\ 0 \\ 0 } e^t + c_3 \pmatrix{ 1 \\ 8 \\ 4 } e^{5t} $$
+
+>  $$ y_1 = -c_1 + c_2 e^t + c_3 e^{5t} $$
+
+>  $$ y_2 = -3c_1 + 8c_3e^{5t} $$
+
+>  $$ y_3 = c_1 + 4c_3 e^{5t} $$
+
+2a)
+
+>  $$ A = \pmatrix{-1 & 2 \\ 2 & -1} \ , \ \lambda^2 + 2\lambda -3 = 0 \implies (\lambda + 3)(\lambda - 1) = 0 $$
+
+>  $$ \lambda_1 = -3 \ , \ x_1 = \pmatrix{ 1  \\ -1  } $$
+
+>  $$ \lambda_2 = 1 \ , \ x_2 = \pmatrix{ 1 \\ 1 } $$
+
+>  $$ Y(0) = \pmatrix{ 3 \\ 1 } $$
+
+>  $$ Y = c_1 \pmatrix{ 1 \\ -1 } e^{-3t} + c_2 \pmatrix{ 1 \\ 1 }e^t $$
+
+>  $$ Y(0) = c_1 \pmatrix{ 1 \\ -1 } + c_2 \pmatrix{ 1 \\ 1 } = \pmatrix{ 1 \\ 3 } \implies c_1 = 1 \ , \ c_2 = 2 $$
+
+>  from $$ \pmatrix{ 1 & 1 \cr -1 & 1 } \pmatrix{ c_1 \\ c_2 } = \pmatrix{ 3 \\ 1 } $$
+
+Given $$  Y = c_1 x_1 e^{\lambda_1 t } + c_2 x_2 e^{\lambda_2 t} + \dots + c_n x_n e^{\lambda_n t} $$ is a solution to
+   $$ Y' = AY \ , \ Y(0) = Y_0 $$
+
+a) 
+>  $$ t = 0 \implies c_1 x_1 + c_2 x_2 + \dots + c_n x_n = Y_0 \implies \pmatrix{ x_1 & x_2 & \cdots & x_n } \pmatrix{ c_1 \\ c_2 \\ \vdots \\ c_n } = Y_0 $$
+
+>  $$ x = \pmatrix{x_1 & x_2 \dots x_n } \ , \ \ Xc = Y_0 $$
+
+>  $$ c = \pmatrix{ c_1 \\ \vdots \\ c_2 } \ , \ x_i $$'s Linear independent $$ \implies \det(x) = 0 $$
+
+>  $$ \implies X^{-1}$$ exists $$ \implies X^{-1}(Xc)= X^{-1}Y_0 $$ or $$ c = X^{-1}Y_0 $$
+
+4)
+>  Let $$ S_1 \equiv $$ amount of salt in tank A and $$ S_2 \equiv $$ amount of salt in tank B
+
+>  $$ \cfrac{ds_1}{dt} = -16\pmatrix{\cfrac{s_1}{100}} + 4 \pmatrix{\cfrac{s_2}{100}} $$
+
+>  $$ \cfrac{ds_2}{dt} = 16\pmatrix{\cfrac{s_1}{100}} - 4 |pmatrix \cfrac{s_2}{100} - 12 \pmatrix{ \cfrac{s_3}{100}} $$
+
+>  $$ \implies S' = AS $$ where $$ S = \pmatrix{ s_1 \\ s_2 } $$
+
+>  $$ A = \pmatrix{ -0.16 & +0.04 \\ 0.16 & -0.16 } $$
+
+>  $$ \lambda^2 + 0.32\lambda + 0.0192 = 0 \implies \lambda = -0.08 \ , \ \lambda = -0.24 $$
+
+>  $$ \matrix{ s_1(0) = 40 \\ s_2(0) = 20} \bigg\rbrace \implies S(0) = \pmatrix{ 40 \\ 20 } $$
+
+>  $$ \lambda_1 = -0.24 \ , \ x_1 = \pmatrix{ 1 \\ -2 } $$
+
+>  $$ \lambda_2 = -0.08 \ , \ x_2 = \pmatrix{ 1 \\ 2 } $$
+
+>  $$ S(t) = c_1 \pmatrix{1 \\ -2} e^{-0.24 t} + c_2 \pmatrix{ 1 \\ 2 } e ^{-0.008 t} $$
+
+>  $$ S(0) \implies \ , \ c_1 = 15 \ , \ c_2 = 25 $$
+
+>  $$ s_1(t) = 15 e^{-0.24 t} + 25 e^{-0/08 t} $$
+
+>  $$ s_2(t) = -30 e^{-0.24 t} + 50 e^{-0.08 t} $$
+
+>  $$ \lim_{t \rightarrow \infty } s_1(t) = \lim_{t \rightarrow\infty} s_2(t) = 0 $$
+
+6)
+
+>   $$ y_1'' = -2y_2 + y_1' + 2y_2' $$
+
+>   $$ y_2'' = 2y_1 +2y - y_2' $$
+
+>   Let $$ y_3 = y_1' \ , \ y_4 = y_2' \ , \  $$ Let $$ Y = \pmatrix{ y_1 \\ y_2 \\ y_3 \\ y_4 } \implies Y' = \pmatrix{ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & -2 & 1 & 2 \\ 2 & 0 & 2 & -1 }Y$$
+
+>   $$ Y = c_1 \pmatrix{ 1 \\ 2 \\ 1 \\ 2 } e^{t} + c_2 \pmatrix{ -2 \\ -1 \\ 2 \\ 1 } e^{-t} + c_3 \pmatrix{ 1 \\ 1 \\ 2 \\ 2 } e^{2t} + c_4 \pmatrix{ 1 \\ -1 \\ -2 \\ 2 } e^{-2t}$$
+
+>   $$ Y(0) = \pmatrix{ 1 \\ 0 \\ -3 \\ 2 } \implies c_1 = 1 \ , \ c_2 = 0 \ , \ c_3 = -1 \ , \ c_4 = 1 $$
+
+>   $$ y_1 = e^t - e^2t + e-2t $$
+
+>   $$ y_2 = 2e^t - e^{2t} - e^{-2t} $$
+
+## 6.4  Hermitian Matrices. 
+
+Consider complex numbers $$ a = b i $$ Let $$ C^n $$ be n-tuples of complex numbers $$ v \in C^3 $$
+
+$$ v = \pmatrix{ a_1 + b_1 i \\ a_2 + b_2 i \\ a_3 + b_3 i } $$
+
+For $$  1 - D $$ if $$ \alpha = a + b i $$ then $$ \vert \alpha \vert = \sqrt{ \bar{\alpha} \alpha } = \sqrt{a^2 + b^2} $$
+
+$$  \alpha = a + b \bar{i} \qquad \bar{\alpha} = a - b i $$
+
+For $$ z \in C^n $$
+
+$$ \bigg\Vert z \bigg\Vert = \pmatrix{ \bigg\vert z_1 \bigg\vert ^2 + \bigg\vert z_2 \bigg\vert ^ 2 + \dots + \bigg\vert z_n \bigg\vert ^2} ^{\frac{1}{2}} $$ 
+
+or 
+
+$$ \bigg\Vert z \bigg\Vert = \pmatrix{\overline{Z}^T Z}^{\frac{1}{2}} $$
+
+Define 
+
+$$ Z^H = \overline{Z}^T $$
+
+## Inner product space on $$ V $$. 
+
+####Def:
+1.   $$ \langle z, z, \rangle \ge 0 \qquad  ( = 0 \iff z = 0 )$$
+
+2.   $$ \langle z , w \rangle = \overline{\langle w, u \rangle} \quad \forall \space z \ , \ w  \ \in \ V $$
+
+3.   $$ \langle \alpha z + \beta w \ , \ u \rangle = \alpha \langle z \ , \ u \rangle + \beta \langle w \ , \ u \rangle$$
+
+For an Orthoganal basis, $$ \bigg\lbrace w_1 , w_2, \dots , w_n \bigg\rbrace $$ and if 
+
+$$ z = \sum_{i=1}^{n} c_i w_i $$
+
+then 
+
+$$ c_i = \langle z \ , \ w_i \rangle $$
+
+$$ \overline{c_i} = \langle w_i \ , \ z \rangle $$
+
+and 
+
+$$ \bigg\Vert z \bigg\Vert^2 = \sum_{i=1}^{n}c_i \overline{c_i} $$
+
+We will define $$ \langle z \ , \ w \rangle = W^HZ $$ 
+
+>  If $$ Z = \pmatrix{ 1 + 2i \\ 4 - 3i} \qquad w = \pmatrix{4-i \\ 2+i} $$
+
+>   $$ \langle z \ , \ w \rangle = W^HZ = \pmatrix{ 4+i & 2-i } \pmatrix{1+2i \\ 4-3i} = 7-4i$$
+
+>   $$ Z^HZ = \bigg\vert 1 + 2i \bigg\vert ^2 + \bigg\vert 4 - 3i \bigg\vert^2 = (1 + 4) + (16 + 9) = 30$$
+
+>   $$ \bigg\Vert Z \bigg\Vert = \sqrt{Z^HZ} = \sqrt{30} $$
+
+### Hermitian Matrices
+
+Let $$ M = (a_{ij} + i b_{ij}) \qquad i=\sqrt{-1} $$ Assume $$ a_{ij} $$ and $$ b_{ij} $$ are real. 
+
+$$ M = A+Bi $$
+
+$$ \overline{M} = A-Bi $$
+
+$$ M^H = \overline{M}^T $$
+
+$$ A^HA = \overline{A}^TA = A^TA $$
+
+$$ \pmatrix{A^H}^H = A $$
+
+and 
+
+$$ \pmatrix{\alpha A + \beta B}^H = \overline{\alpha}A^H + \overline{\beta}B^H = \overline{\alpha}A^T + \overline{\beta}B^T $$
+
+$$ \pmatrix{AC}^H = \pmatrix{\overline{AC}}^T = \pmatrix{ \overline{A} & \overline{C}}^T = \overline{C}^T \ \overline{A}^T = C^H \ A^H$$
+
+#### def:-
+
+A matrix is called Hermitian if $$ M^H = M $$
+
+#### e.g.
+
+>   $$ M = \pmatrix{ 4 & 3+2i \cr 3-2i & 3 } $$
+
+>   $$ M^H = \overline{M}^T = \pmatrix{ 4 & 3-2i \cr 3+2i & 3 }^T = \pmatrix{ 4 & 3+2i \cr 3-2i & 3 }$$
+
+The Diagonals are real. Matching offset diagonals are conjugates
+
+If $$ M $$ is real $$ M^H = M^T $$
+
+If M is Hermitian $$ \implies M^T = M \implies M $$ is symetric
+
+
+#### Thm:-
+
+All eigenvalues of a Hermitian matrix are real. Also eigenvectors belonging to distinct eigenvalues are orthogonal
+
+#### e.g.
+
+>   $$ A = \pmatrix{ 2 & 1+i \cr 1-i & 3 } $$
+
+>   $$ \bigg\vert A - \lambda I \bigg\vert = \bigg\vert\matrix{ 2-\lambda & 1+i \cr 1-i & 3-\lambda }\bigg\vert = (2-\lambda)(3-\lambda)-(1+i)(1-i) = 0 $$
+
+>   $$ \implies \lambda^2 -5\lambda + 6 -2 = 0$$
+
+>   $$ \lambda^2 -5\lambda +4 = 0 $$
+
+>   $$ \lambda_1 = 1 \qquad \lambda_2 = 4 $$
+
+>   $$ \lambda_1 = 1 \qquad \pmatrix{ 1 & 1+i \cr 1-i & 2 }x_1 = 0 \implies x_1 = \pmatrix{-1-i \\ 1} $$ or $$ x_1 = \pmatrix{1+i \\ -1} $$
+
+>   $$ \lambda_2 = 4 \qquad \pmatrix{ -2 & 1+i \cr 1-i & -1 }x_2 = 0 \qquad x_2 = \pmatrix{ 1+i \\ 2} $$
+
+>   $$ \langle x_2 \ , \ \rangle = x_1^Hx_2 = \pmatrix{ 1-i & -1 } \pmatrix{ 1_i \\ 2 } = 2-2 = 0 \implies x_1 \perp x_2$$ orthogonal
+
+#### def:-
+$$ U \space n \times n $$ is called unitary if its collumn vectors form an orthogonal set in $$ C^n $$
+
+if $$ U $$ is unoitary $$ U^HU = I \qquad U^{-1}= U^H$$
+
+#### Thm:-
+
+If the eigenvalues of a Hermitian matrix $$ A $$ are distinct, then there exists a unitary matrix that diagonalizes $$ A $$
+
+#### e.g.
+
+>   $$ A = \pmatrix{ 1 & 1+i \cr 1-i & 3 } $$ then let $$ u_1 = \cfrac{x_1}{\Vert x_1 \Vert} \qquad u_2 = \cfrac{x_2}{\Vert x_2 \Vert} $$
+
+>   $$ U = \pmatrix{ \frac{-1-i}{\sqrt{3}} & \frac{1+i}{\sqrt{6}} \cr \frac{1}{\sqrt{3}} & \frac{2}{\sqrt{6}} } = \cfrac{1}{\sqrt{3}}\pmatrix{ -1-i & \frac{1+i}{\sqrt{2}} \cr 1 & \sqrt{2} } $$
+
+>   $$ U^H = \cfrac{1}{\sqrt{3}} \pmatrix{ -1+i & 1 \cr \frac{1-i}{\sqrt{2}} & \sqrt{2} } $$
+
+Show $$ U^HAU = \pmatrix{ 1 & 0 \cr 0 & 4 } $$
+
+### Normal Matrices
+
+#### def:-
+A Matrix $$ A $$ is normal if $$ AA^H = A^HA $$
+
+#### thm:- 
+A matrix $$ A $$ is normal $$ \iff $$ it contains a complete orthonormal set of Eigenvalues. 
+
+>   $$ A = \pmatrix{ 2 & i & 0 \\ -i & 2 & 0 \\ 0 & 0 & 2 } \qquad A^H = A $$ 
+
+>   $$ \implies AA^H = A^2 = A^HA $$
+
+#### e.g.
+
+>   $$ A = \pmatrix{ 0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 } \qquad A^H = A $$
+
+>   The Characteristic polynimial $$ \implies ( 1 - \lambda )( \lambda^2 - 1 )=0 \implies \lambda_1 = -1 \quad \lambda_2 = \lambda_3 = 1 $$
+
+>   $$ \lambda = -1 \quad x_1 = \pmatrix{ -1 \\ 0 \\ 1} $$
+
+>   $$ \lambda_2 = \lambda_3 = 1 \quad x_2 = \pmatrix{ 0 \\ 1 \\ 0 } \quad x_3 = \pmatrix{ 1 \\ 0 \\ 1 } $$
+
+>   $$ U_1 = \cfrac{x_1}{\Vert x_1 \Vert} = \cfrac{1}{\sqrt{2}}\pmatrix{ -1 \\ 0 \\ 1 } \quad u_2 = \pmatrix{ 0 \\ 1 \\ 0 } \quad u_3 = \cfrac{1}{\sqrt{2}} \pmatrix{ 1 \\ 0 \\ 1} $$
+
+>   $$ U = \cfrac{1}{\sqrt{2}} \pmatrix{ -1 & 0 & 1 \\ 0 & \sqrt{2} & 0 \\ 1 & 0 & 1 } \space $$ is Orthogonal
